@@ -17,11 +17,13 @@
         }
     ],
     "require": {
-        "php": "^7.1.3"
+        "php": "^7.1.3",
+        "wsdltophp/packagebase": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^7.0",
-        "squizlabs/php_codesniffer": "^2.3"
+        "squizlabs/php_codesniffer": "^2.3",
+        "wsdltophp/packagegenerator": "^2.9"
     },
     "autoload": {
         "psr-4": {
