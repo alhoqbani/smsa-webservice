@@ -5,6 +5,7 @@ namespace Alhoqbani\SMSAWebService;
 use Alhoqbani\SMSAWebService\Soap\ClassMap;
 use Alhoqbani\SMSAWebService\Soap\Service;
 use Alhoqbani\SMSAWebService\Soap\Type\AddShipment;
+use Alhoqbani\SMSAWebService\Soap\Type\GetPDF;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
 class SMSA
@@ -44,6 +45,7 @@ class SMSA
      * @param array $params
      *
      * @return array|string Shipment awb number or array of errors.
+     * @throws \Alhoqbani\SMSAWebService\ResponseError
      */
     public function addShipment(array $params)
     {
@@ -84,10 +86,36 @@ class SMSA
 
         $result = $this->service->addShipment($addShipment);
 
-        if ($result) {
+        if (false !== $result) {
             return $result->getAddShipmentResult();
         } else {
-            return $this->service->getLastError();
+            throw new ResponseError($this->service->getLastError());
         }
     }
+
+    /**
+     * Get AWB in PDF for printing
+     * This method can be used to get the AWB Copy in PDF format for printing and labeling on shipment.
+     *
+     * @param $passKey
+     * @param $awb
+     *
+     * @return array|null|string
+     */
+    function awbPDF($awb, $passKey = null)
+    {
+        $getPdf = new GetPDF($awb, $passKey ?? $this->passKey);
+
+        $pdf = $this->service->getPDF($getPdf);
+
+        var_dump($pdf);
+
+        if ($pdf) {
+            echo 'pdf is true';
+            return $pdf->getGetPDFResult();
+        }
+
+        return $this->service->getLastError();
+    }
+
 }
