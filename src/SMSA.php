@@ -91,11 +91,13 @@ class SMSA
             throw new ResponseError($this->service->getLastError());
         }
 
+        $result = $result->getAddShipmentResult();
+
         if (strpos(mb_strtolower($result), 'failed') === 0) {
-            throw new FailedResponse($this->service->getLastError());
+            throw new FailedResponse($result);
         }
 
-        return $result->getAddShipmentResult();
+        return $result;
     }
 
     /**
