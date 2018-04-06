@@ -2,25 +2,92 @@
 
 namespace Alhoqbani\SMSAWebService;
 
+use Alhoqbani\SMSAWebService\Soap\ClassMap;
+use Alhoqbani\SMSAWebService\Soap\Service;
+use Alhoqbani\SMSAWebService\Soap\Type\AddShipment;
+use WsdlToPhp\PackageBase\AbstractSoapClientBase;
+
 class SMSA
 {
+
     /**
-     * Create a new Skeleton Instance
+     * @var \Alhoqbani\SMSAWebService\Soap\Service
      */
-    public function __construct()
+    protected $service;
+
+    /**
+     * @var string
+     */
+    private $passKey;
+
+    /**
+     * Create a new SMSA Instance
+     *
+     * @param string $passKey
+     */
+    public function __construct(string $passKey = 'Testing0')
     {
-        // constructor body
+        $this->passKey = $passKey;
+
+        $options = array(
+            AbstractSoapClientBase::WSDL_URL => 'http://track.smsaexpress.com/SECOM/SMSAwebService.asmx?WSDL',
+            AbstractSoapClientBase::WSDL_CLASSMAP => ClassMap::get(),
+        );
+
+        $this->service = new Service($options);
     }
 
     /**
-     * Friendly welcome
+     * Add Shipment without Shipper and delivery details
+     * This method can be used to upload the shipment information to SMSA Server.
      *
-     * @param string $phrase Phrase to return
+     * @param array $params
      *
-     * @return string Returns the phrase passed in
+     * @return array|string Shipment awb number or array of errors.
      */
-    public function echoPhrase($phrase)
+    public function addShipment(array $params)
     {
-        return $phrase;
+        $addShipment = (new AddShipment())
+
+            // Mandatory fields
+        ->setPassKey($params['passKey'] ?? $this->passKey ?? 'Testing0')
+        ->setRefNo($params['refNo'] ?? (string) time())
+        ->setPCs($params['pCs'] ?? 0)
+        ->setShipType($params['shipType'] ?? 'DLV')
+        ->setWeight($params['weight'] ?? '0') // Must be intval
+        ->setCName($params['cName'] ?? 'Customer JEDDAH')
+
+            // Customer Details
+        ->setCntry($params['cntry'] ?? 'SA') // Required
+        ->setCCity($params['cCity'] ?? 'JEDDAH') // Required
+        ->setCMobile($params['cMobile'] ?? '0500500500') // Required
+        ->setCAddr1($params['cAddr1'] ?? 'Street Address') // Required
+
+        ->setCZip($params['cZip'] ?? '')
+        ->setCPOBox($params['cPOBox'] ?? '')
+        ->setCTel1($params['cTel1'] ?? '')
+        ->setCTel2($params['cTel2'] ?? '')
+        ->setCAddr2($params['cAddr2'] ?? '')
+        ->setCEmail($params['cEmail'] ?? '')
+
+            // Optional
+        ->setSentDate($params['sentDate'] ?? '')
+        ->setIdNo($params['idNo'] ?? '')
+        ->setCarrValue($params['carrValue'] ?? '')
+        ->setCarrCurr($params['carrCurr'] ?? '')
+        ->setCodAmt($params['codAmt'] ?? '')
+        ->setCustVal($params['custVal'] ?? '')
+        ->setCustCurr($params['custCurr'] ?? '')
+        ->setInsrAmt($params['insrAmt'] ?? '')
+        ->setInsrCurr($params['insrCurr'] ?? '')
+        ->setItemDesc($params['itemDesc'] ?? '');
+
+        $result = $this->service->addShipment($addShipment);
+
+        if ($result) {
+            return $result->getAddShipmentResult();
+        } else {
+            return $this->service->getLastError();
+        }
     }
 }
