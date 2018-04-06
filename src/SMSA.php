@@ -95,7 +95,7 @@ class SMSA
             throw new FailedResponse($this->service->getLastError());
         }
 
-        return $result;
+        return $result->getAddShipmentResult();
     }
 
     /**
