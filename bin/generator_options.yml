@@ -6,7 +6,7 @@ category:
     default: 'cat'
     values: [ 'none', 'cat' ]
 gather_methods:
-    default: 'start'
+    default: 'none'
     values: ['start', 'end', 'none' ]
 generic_constants_names:
     default: false
@@ -18,10 +18,10 @@ add_comments:
     default: [ ]
     values: null
 namespace_prefix:
-    default: ''
+    default: 'Alhoqbani\SMSAWebService\Soap'
     values: ''
 standalone:
-    default: true
+    default: false
     values: [ true, false ]
 validation:
     default: true
@@ -36,13 +36,13 @@ soap_client_class:
     default: '\WsdlToPhp\PackageBase\AbstractSoapClientBase'
     values: ''
 origin:
-    default: ''
+    default: 'http://track.smsaexpress.com/SECOM/SMSAwebService.asmx?WSDL'
     values: ''
 destination:
-    default: ''
+    default: '../src'
     values: ''
 src_dirname:
-    default: 'src'
+    default: 'Soap'
     values: ''
 prefix:
     default: ''
@@ -78,20 +78,20 @@ composer_settings:
     default: []
     values: ''
 structs_folder:
-    default: 'StructType'
+    default: 'Type'
     values: ''
 arrays_folder:
-    default: 'ArrayType'
+    default: 'Type'
     values: ''
 enums_folder:
-    default: 'EnumType'
+    default: 'Type'
     values: ''
 services_folder:
-    default: 'ServiceType'
+    default: ''
     values: ''
 schemas_save:
-    default: false
+    default: true
     values: [ true, false ]
 schemas_folder:
-    default: 'wsdl'
+    default: 'Soap/wsdl'
     values: ''
