@@ -46,6 +46,7 @@ class SMSA
      *
      * @return array|string Shipment awb number or array of errors.
      * @throws \Alhoqbani\SMSAWebService\ResponseError
+     * @throws \Alhoqbani\SMSAWebService\FailedResponse
      */
     public function addShipment(array $params)
     {
@@ -86,11 +87,15 @@ class SMSA
 
         $result = $this->service->addShipment($addShipment);
 
-        if (false !== $result) {
-            return $result->getAddShipmentResult();
-        } else {
+        if (false === $result) {
             throw new ResponseError($this->service->getLastError());
         }
+
+        if (strpos(mb_strtolower($result), 'failed') === 0) {
+            throw new FailedResponse($this->service->getLastError());
+        }
+
+        return $result;
     }
 
     /**
