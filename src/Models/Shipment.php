@@ -92,6 +92,12 @@ class Shipment
      * @var \Alhoqbani\SMSAWebService\Models\Customer
      */
     private $customer;
+    /**
+     * Shipper associated with the shipment.
+     *
+     * @var \Alhoqbani\SMSAWebService\Models\Shipper
+     */
+    private $shipper;
     
     /**
      * Shipment constructor.
