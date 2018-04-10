@@ -1,6 +1,6 @@
 <?php
 
-namespace Alhoqbani\SMSAWebService;
+namespace Alhoqbani\SMSAWebService\Exceptions;
 
 class FailedResponse extends SMSAWebServiceException
 {

@@ -2,7 +2,7 @@
 
 namespace Alhoqbani\SMSAWebService\Exceptions;
 
-abstract class SMSAWebServiceException extends \Exception
+class RequestError extends SMSAWebServiceException
 {
 
 }
