@@ -1,12 +1,19 @@
 <?php
 
+/*
+ * This file is part of SMSA WebService package.
+ * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Alhoqbani\SMSAWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for getStatusResponse Type
- * @subpackage Structs
+ *
  * @date 2018/04/06
  * @codeVersion 0.0.1
  */
@@ -17,12 +24,16 @@ class GetStatusResponse extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $getStatusResult;
+
     /**
      * Constructor method for getStatusResponse
+     *
      * @uses GetStatusResponse::setGetStatusResult()
+     *
      * @param string $getStatusResult
      */
     public function __construct($getStatusResult = null)
@@ -30,17 +41,22 @@ class GetStatusResponse extends AbstractStructBase
         $this
             ->setGetStatusResult($getStatusResult);
     }
+
     /**
      * Get getStatusResult value
+     *
      * @return string|null
      */
     public function getGetStatusResult()
     {
         return $this->getStatusResult;
     }
+
     /**
      * Set getStatusResult value
+     *
      * @param string $getStatusResult
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\GetStatusResponse
      */
     public function setGetStatusResult($getStatusResult = null)
@@ -50,22 +66,30 @@ class GetStatusResponse extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($getStatusResult)), __LINE__);
         }
         $this->getStatusResult = $getStatusResult;
+
         return $this;
     }
+
     /**
      * Method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
+     *
      * @see AbstractStructBase::__set_state()
+     *
      * @uses AbstractStructBase::__set_state()
+     *
      * @param array $array the exported values
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\GetStatusResponse
      */
     public static function __set_state(array $array)
     {
         return parent::__set_state($array);
     }
+
     /**
      * Method returning the class name
+     *
      * @return string __CLASS__
      */
     public function __toString()

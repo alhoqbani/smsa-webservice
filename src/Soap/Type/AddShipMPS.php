@@ -1,12 +1,19 @@
 <?php
 
+/*
+ * This file is part of SMSA WebService package.
+ * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Alhoqbani\SMSAWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
 /**
  * This class stands for addShipMPS Type
- * @subpackage Structs
+ *
  * @date 2018/04/06
  * @codeVersion 0.0.1
  */
@@ -17,6 +24,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 1
+     *
      * @var int
      */
     public $PCs;
@@ -25,6 +33,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $passKey;
@@ -33,6 +42,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $refNo;
@@ -41,6 +51,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sentDate;
@@ -49,6 +60,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $idNo;
@@ -57,6 +69,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cName;
@@ -65,6 +78,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cntry;
@@ -73,6 +87,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cCity;
@@ -81,6 +96,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cZip;
@@ -89,6 +105,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cPOBox;
@@ -97,6 +114,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cMobile;
@@ -105,6 +123,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cTel1;
@@ -113,6 +132,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cTel2;
@@ -121,6 +141,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cAddr1;
@@ -129,6 +150,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cAddr2;
@@ -137,6 +159,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $shipType;
@@ -145,6 +168,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $cEmail;
@@ -153,6 +177,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $carrValue;
@@ -161,6 +186,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $carrCurr;
@@ -169,6 +195,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $codAmt;
@@ -177,6 +204,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $weight;
@@ -185,6 +213,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $custVal;
@@ -193,6 +222,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $custCurr;
@@ -201,6 +231,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $insrAmt;
@@ -209,6 +240,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $insrCurr;
@@ -217,6 +249,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $itemDesc;
@@ -225,6 +258,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sName;
@@ -233,6 +267,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sContact;
@@ -241,6 +276,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sAddr1;
@@ -249,6 +285,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sAddr2;
@@ -257,6 +294,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sCity;
@@ -265,6 +303,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sPhone;
@@ -273,6 +312,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $sCntry;
@@ -281,6 +321,7 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $prefDelvDate;
@@ -289,11 +330,14 @@ class AddShipMPS extends AbstractStructBase
      * Meta informations extracted from the WSDL
      * - maxOccurs: 1
      * - minOccurs: 0
+     *
      * @var string
      */
     public $gpsPoints;
+
     /**
      * Constructor method for addShipMPS
+     *
      * @uses AddShipMPS::setPCs()
      * @uses AddShipMPS::setPassKey()
      * @uses AddShipMPS::setRefNo()
@@ -329,7 +373,8 @@ class AddShipMPS extends AbstractStructBase
      * @uses AddShipMPS::setSCntry()
      * @uses AddShipMPS::setPrefDelvDate()
      * @uses AddShipMPS::setGpsPoints()
-     * @param int $pCs
+     *
+     * @param int    $pCs
      * @param string $passKey
      * @param string $refNo
      * @param string $sentDate
@@ -404,17 +449,22 @@ class AddShipMPS extends AbstractStructBase
             ->setPrefDelvDate($prefDelvDate)
             ->setGpsPoints($gpsPoints);
     }
+
     /**
      * Get PCs value
+     *
      * @return int
      */
     public function getPCs()
     {
         return $this->PCs;
     }
+
     /**
      * Set PCs value
+     *
      * @param int $pCs
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setPCs($pCs = null)
@@ -424,19 +474,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a numeric value, "%s" given', gettype($pCs)), __LINE__);
         }
         $this->PCs = $pCs;
+
         return $this;
     }
+
     /**
      * Get passKey value
+     *
      * @return string|null
      */
     public function getPassKey()
     {
         return $this->passKey;
     }
+
     /**
      * Set passKey value
+     *
      * @param string $passKey
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setPassKey($passKey = null)
@@ -446,19 +502,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($passKey)), __LINE__);
         }
         $this->passKey = $passKey;
+
         return $this;
     }
+
     /**
      * Get refNo value
+     *
      * @return string|null
      */
     public function getRefNo()
     {
         return $this->refNo;
     }
+
     /**
      * Set refNo value
+     *
      * @param string $refNo
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setRefNo($refNo = null)
@@ -468,19 +530,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($refNo)), __LINE__);
         }
         $this->refNo = $refNo;
+
         return $this;
     }
+
     /**
      * Get sentDate value
+     *
      * @return string|null
      */
     public function getSentDate()
     {
         return $this->sentDate;
     }
+
     /**
      * Set sentDate value
+     *
      * @param string $sentDate
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSentDate($sentDate = null)
@@ -490,19 +558,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sentDate)), __LINE__);
         }
         $this->sentDate = $sentDate;
+
         return $this;
     }
+
     /**
      * Get idNo value
+     *
      * @return string|null
      */
     public function getIdNo()
     {
         return $this->idNo;
     }
+
     /**
      * Set idNo value
+     *
      * @param string $idNo
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setIdNo($idNo = null)
@@ -512,19 +586,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($idNo)), __LINE__);
         }
         $this->idNo = $idNo;
+
         return $this;
     }
+
     /**
      * Get cName value
+     *
      * @return string|null
      */
     public function getCName()
     {
         return $this->cName;
     }
+
     /**
      * Set cName value
+     *
      * @param string $cName
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCName($cName = null)
@@ -534,19 +614,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cName)), __LINE__);
         }
         $this->cName = $cName;
+
         return $this;
     }
+
     /**
      * Get cntry value
+     *
      * @return string|null
      */
     public function getCntry()
     {
         return $this->cntry;
     }
+
     /**
      * Set cntry value
+     *
      * @param string $cntry
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCntry($cntry = null)
@@ -556,19 +642,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cntry)), __LINE__);
         }
         $this->cntry = $cntry;
+
         return $this;
     }
+
     /**
      * Get cCity value
+     *
      * @return string|null
      */
     public function getCCity()
     {
         return $this->cCity;
     }
+
     /**
      * Set cCity value
+     *
      * @param string $cCity
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCCity($cCity = null)
@@ -578,19 +670,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cCity)), __LINE__);
         }
         $this->cCity = $cCity;
+
         return $this;
     }
+
     /**
      * Get cZip value
+     *
      * @return string|null
      */
     public function getCZip()
     {
         return $this->cZip;
     }
+
     /**
      * Set cZip value
+     *
      * @param string $cZip
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCZip($cZip = null)
@@ -600,19 +698,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cZip)), __LINE__);
         }
         $this->cZip = $cZip;
+
         return $this;
     }
+
     /**
      * Get cPOBox value
+     *
      * @return string|null
      */
     public function getCPOBox()
     {
         return $this->cPOBox;
     }
+
     /**
      * Set cPOBox value
+     *
      * @param string $cPOBox
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCPOBox($cPOBox = null)
@@ -622,19 +726,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cPOBox)), __LINE__);
         }
         $this->cPOBox = $cPOBox;
+
         return $this;
     }
+
     /**
      * Get cMobile value
+     *
      * @return string|null
      */
     public function getCMobile()
     {
         return $this->cMobile;
     }
+
     /**
      * Set cMobile value
+     *
      * @param string $cMobile
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCMobile($cMobile = null)
@@ -644,19 +754,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cMobile)), __LINE__);
         }
         $this->cMobile = $cMobile;
+
         return $this;
     }
+
     /**
      * Get cTel1 value
+     *
      * @return string|null
      */
     public function getCTel1()
     {
         return $this->cTel1;
     }
+
     /**
      * Set cTel1 value
+     *
      * @param string $cTel1
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCTel1($cTel1 = null)
@@ -666,19 +782,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cTel1)), __LINE__);
         }
         $this->cTel1 = $cTel1;
+
         return $this;
     }
+
     /**
      * Get cTel2 value
+     *
      * @return string|null
      */
     public function getCTel2()
     {
         return $this->cTel2;
     }
+
     /**
      * Set cTel2 value
+     *
      * @param string $cTel2
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCTel2($cTel2 = null)
@@ -688,19 +810,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cTel2)), __LINE__);
         }
         $this->cTel2 = $cTel2;
+
         return $this;
     }
+
     /**
      * Get cAddr1 value
+     *
      * @return string|null
      */
     public function getCAddr1()
     {
         return $this->cAddr1;
     }
+
     /**
      * Set cAddr1 value
+     *
      * @param string $cAddr1
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCAddr1($cAddr1 = null)
@@ -710,19 +838,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cAddr1)), __LINE__);
         }
         $this->cAddr1 = $cAddr1;
+
         return $this;
     }
+
     /**
      * Get cAddr2 value
+     *
      * @return string|null
      */
     public function getCAddr2()
     {
         return $this->cAddr2;
     }
+
     /**
      * Set cAddr2 value
+     *
      * @param string $cAddr2
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCAddr2($cAddr2 = null)
@@ -732,19 +866,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cAddr2)), __LINE__);
         }
         $this->cAddr2 = $cAddr2;
+
         return $this;
     }
+
     /**
      * Get shipType value
+     *
      * @return string|null
      */
     public function getShipType()
     {
         return $this->shipType;
     }
+
     /**
      * Set shipType value
+     *
      * @param string $shipType
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setShipType($shipType = null)
@@ -754,19 +894,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($shipType)), __LINE__);
         }
         $this->shipType = $shipType;
+
         return $this;
     }
+
     /**
      * Get cEmail value
+     *
      * @return string|null
      */
     public function getCEmail()
     {
         return $this->cEmail;
     }
+
     /**
      * Set cEmail value
+     *
      * @param string $cEmail
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCEmail($cEmail = null)
@@ -776,19 +922,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($cEmail)), __LINE__);
         }
         $this->cEmail = $cEmail;
+
         return $this;
     }
+
     /**
      * Get carrValue value
+     *
      * @return string|null
      */
     public function getCarrValue()
     {
         return $this->carrValue;
     }
+
     /**
      * Set carrValue value
+     *
      * @param string $carrValue
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCarrValue($carrValue = null)
@@ -798,19 +950,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($carrValue)), __LINE__);
         }
         $this->carrValue = $carrValue;
+
         return $this;
     }
+
     /**
      * Get carrCurr value
+     *
      * @return string|null
      */
     public function getCarrCurr()
     {
         return $this->carrCurr;
     }
+
     /**
      * Set carrCurr value
+     *
      * @param string $carrCurr
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCarrCurr($carrCurr = null)
@@ -820,19 +978,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($carrCurr)), __LINE__);
         }
         $this->carrCurr = $carrCurr;
+
         return $this;
     }
+
     /**
      * Get codAmt value
+     *
      * @return string|null
      */
     public function getCodAmt()
     {
         return $this->codAmt;
     }
+
     /**
      * Set codAmt value
+     *
      * @param string $codAmt
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCodAmt($codAmt = null)
@@ -842,19 +1006,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($codAmt)), __LINE__);
         }
         $this->codAmt = $codAmt;
+
         return $this;
     }
+
     /**
      * Get weight value
+     *
      * @return string|null
      */
     public function getWeight()
     {
         return $this->weight;
     }
+
     /**
      * Set weight value
+     *
      * @param string $weight
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setWeight($weight = null)
@@ -864,19 +1034,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($weight)), __LINE__);
         }
         $this->weight = $weight;
+
         return $this;
     }
+
     /**
      * Get custVal value
+     *
      * @return string|null
      */
     public function getCustVal()
     {
         return $this->custVal;
     }
+
     /**
      * Set custVal value
+     *
      * @param string $custVal
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCustVal($custVal = null)
@@ -886,19 +1062,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custVal)), __LINE__);
         }
         $this->custVal = $custVal;
+
         return $this;
     }
+
     /**
      * Get custCurr value
+     *
      * @return string|null
      */
     public function getCustCurr()
     {
         return $this->custCurr;
     }
+
     /**
      * Set custCurr value
+     *
      * @param string $custCurr
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setCustCurr($custCurr = null)
@@ -908,19 +1090,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($custCurr)), __LINE__);
         }
         $this->custCurr = $custCurr;
+
         return $this;
     }
+
     /**
      * Get insrAmt value
+     *
      * @return string|null
      */
     public function getInsrAmt()
     {
         return $this->insrAmt;
     }
+
     /**
      * Set insrAmt value
+     *
      * @param string $insrAmt
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setInsrAmt($insrAmt = null)
@@ -930,19 +1118,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($insrAmt)), __LINE__);
         }
         $this->insrAmt = $insrAmt;
+
         return $this;
     }
+
     /**
      * Get insrCurr value
+     *
      * @return string|null
      */
     public function getInsrCurr()
     {
         return $this->insrCurr;
     }
+
     /**
      * Set insrCurr value
+     *
      * @param string $insrCurr
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setInsrCurr($insrCurr = null)
@@ -952,19 +1146,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($insrCurr)), __LINE__);
         }
         $this->insrCurr = $insrCurr;
+
         return $this;
     }
+
     /**
      * Get itemDesc value
+     *
      * @return string|null
      */
     public function getItemDesc()
     {
         return $this->itemDesc;
     }
+
     /**
      * Set itemDesc value
+     *
      * @param string $itemDesc
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setItemDesc($itemDesc = null)
@@ -974,19 +1174,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($itemDesc)), __LINE__);
         }
         $this->itemDesc = $itemDesc;
+
         return $this;
     }
+
     /**
      * Get sName value
+     *
      * @return string|null
      */
     public function getSName()
     {
         return $this->sName;
     }
+
     /**
      * Set sName value
+     *
      * @param string $sName
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSName($sName = null)
@@ -996,19 +1202,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sName)), __LINE__);
         }
         $this->sName = $sName;
+
         return $this;
     }
+
     /**
      * Get sContact value
+     *
      * @return string|null
      */
     public function getSContact()
     {
         return $this->sContact;
     }
+
     /**
      * Set sContact value
+     *
      * @param string $sContact
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSContact($sContact = null)
@@ -1018,19 +1230,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sContact)), __LINE__);
         }
         $this->sContact = $sContact;
+
         return $this;
     }
+
     /**
      * Get sAddr1 value
+     *
      * @return string|null
      */
     public function getSAddr1()
     {
         return $this->sAddr1;
     }
+
     /**
      * Set sAddr1 value
+     *
      * @param string $sAddr1
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSAddr1($sAddr1 = null)
@@ -1040,19 +1258,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sAddr1)), __LINE__);
         }
         $this->sAddr1 = $sAddr1;
+
         return $this;
     }
+
     /**
      * Get sAddr2 value
+     *
      * @return string|null
      */
     public function getSAddr2()
     {
         return $this->sAddr2;
     }
+
     /**
      * Set sAddr2 value
+     *
      * @param string $sAddr2
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSAddr2($sAddr2 = null)
@@ -1062,19 +1286,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sAddr2)), __LINE__);
         }
         $this->sAddr2 = $sAddr2;
+
         return $this;
     }
+
     /**
      * Get sCity value
+     *
      * @return string|null
      */
     public function getSCity()
     {
         return $this->sCity;
     }
+
     /**
      * Set sCity value
+     *
      * @param string $sCity
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSCity($sCity = null)
@@ -1084,19 +1314,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sCity)), __LINE__);
         }
         $this->sCity = $sCity;
+
         return $this;
     }
+
     /**
      * Get sPhone value
+     *
      * @return string|null
      */
     public function getSPhone()
     {
         return $this->sPhone;
     }
+
     /**
      * Set sPhone value
+     *
      * @param string $sPhone
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSPhone($sPhone = null)
@@ -1106,19 +1342,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sPhone)), __LINE__);
         }
         $this->sPhone = $sPhone;
+
         return $this;
     }
+
     /**
      * Get sCntry value
+     *
      * @return string|null
      */
     public function getSCntry()
     {
         return $this->sCntry;
     }
+
     /**
      * Set sCntry value
+     *
      * @param string $sCntry
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setSCntry($sCntry = null)
@@ -1128,19 +1370,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($sCntry)), __LINE__);
         }
         $this->sCntry = $sCntry;
+
         return $this;
     }
+
     /**
      * Get prefDelvDate value
+     *
      * @return string|null
      */
     public function getPrefDelvDate()
     {
         return $this->prefDelvDate;
     }
+
     /**
      * Set prefDelvDate value
+     *
      * @param string $prefDelvDate
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setPrefDelvDate($prefDelvDate = null)
@@ -1150,19 +1398,25 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($prefDelvDate)), __LINE__);
         }
         $this->prefDelvDate = $prefDelvDate;
+
         return $this;
     }
+
     /**
      * Get gpsPoints value
+     *
      * @return string|null
      */
     public function getGpsPoints()
     {
         return $this->gpsPoints;
     }
+
     /**
      * Set gpsPoints value
+     *
      * @param string $gpsPoints
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public function setGpsPoints($gpsPoints = null)
@@ -1172,22 +1426,30 @@ class AddShipMPS extends AbstractStructBase
             throw new \InvalidArgumentException(sprintf('Invalid value, please provide a string, "%s" given', gettype($gpsPoints)), __LINE__);
         }
         $this->gpsPoints = $gpsPoints;
+
         return $this;
     }
+
     /**
      * Method called when an object has been exported with var_export() functions
      * It allows to return an object instantiated with the values
+     *
      * @see AbstractStructBase::__set_state()
+     *
      * @uses AbstractStructBase::__set_state()
+     *
      * @param array $array the exported values
+     *
      * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS
      */
     public static function __set_state(array $array)
     {
         return parent::__set_state($array);
     }
+
     /**
      * Method returning the class name
+     *
      * @return string __CLASS__
      */
     public function __toString()

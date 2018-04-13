@@ -1,11 +1,17 @@
 <?php
 
-namespace Alhoqbani\SmsaWebService\Models;
+/*
+ * This file is part of SMSA WebService package.
+ * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Alhoqbani\SmsaWebService\Models;
 
 class Customer
 {
-    
+
     /**
      * Customer Name.
      * Cannot be Null
@@ -47,9 +53,9 @@ class Customer
      * @var string
      */
     private $country;
-    
+
     /** Optional Properties */
-    
+
     /**
      * Address Line 2.
      * Either of Address fields to be filled duly
@@ -98,7 +104,7 @@ class Customer
      * @var string
      */
     private $email = '';
-    
+
     /**
      * Customer constructor.
      *
@@ -109,12 +115,16 @@ class Customer
      * @param string $country
      */
     public function __construct(
-        string $name, string $mobile, string $addressLine1, string $city, string $country = 'KSA'
+        string $name,
+        string $mobile,
+        string $addressLine1,
+        string $city,
+        string $country = 'KSA'
     ) {
-        $this->name         = $name;
-        $this->mobile       = $mobile;
+        $this->name = $name;
+        $this->mobile = $mobile;
         $this->addressLine1 = $addressLine1;
-        $this->city         = $city;
-        $this->country      = $country;
+        $this->city = $city;
+        $this->country = $country;
     }
 }

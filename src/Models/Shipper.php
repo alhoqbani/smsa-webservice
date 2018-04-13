@@ -1,17 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hamoud
- * Date: 4/7/18
- * Time: 1:10 AM
+
+/*
+ * This file is part of SMSA WebService package.
+ * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Alhoqbani\SmsaWebService\Models;
 
-
 class Shipper
 {
-    
+
     /**
      * Shipper Name.
      * Mandatory
@@ -68,8 +68,7 @@ class Shipper
      * @var string
      */
     private $phone;
-    
-    
+
     /**
      * Shipper constructor.
      *
@@ -90,12 +89,12 @@ class Shipper
         string $country,
         string $phone
     ) {
-        $this->name         = $name;
-        $this->contactName  = $contactName;
+        $this->name = $name;
+        $this->contactName = $contactName;
         $this->addressLine1 = $addressLine1;
         $this->addressLine2 = $addressLine2;
-        $this->city         = $city;
-        $this->country      = $country;
-        $this->phone        = $phone;
+        $this->city = $city;
+        $this->country = $country;
+        $this->phone = $phone;
     }
 }

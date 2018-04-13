@@ -1,16 +1,21 @@
 <?php
 
-namespace Alhoqbani\SMSAWebService\Models;
+/*
+ * This file is part of SMSA WebService package.
+ * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
 
+namespace Alhoqbani\SMSAWebService\Models;
 
 class Shipment
 {
-    
     const TYPE_DLV = 'DLV';
     const TYPE_VAL = 'VAL';
     const TYPE_HAL = 'HAL';
     const TYPE_BLT = 'BLT';
-    
+
     /**
      * Unique Number for each day (Required).
      * Cannot be Null
@@ -42,9 +47,9 @@ class Shipment
      * @var int
      */
     private $weight = 0;
-    
+
     /** Optional Properties */
-    
+
     /**
      * Id.
      * Optional
@@ -83,9 +88,9 @@ class Shipment
      * @var string
      */
     private $gpsPoints = '';
-    
+
     /** Related Objects */
-    
+
     /**
      * Customer associated with the shipment.
      *
@@ -98,7 +103,7 @@ class Shipment
      * @var \Alhoqbani\SMSAWebService\Models\Shipper
      */
     private $shipper;
-    
+
     /**
      * Shipment constructor.
      *
@@ -107,10 +112,12 @@ class Shipment
      * @param \Alhoqbani\SMSAWebService\Models\Customer $customer
      */
     public function __construct(
-        string $referenceNumber, string $type = self::TYPE_DLV, Customer $customer
+        string $referenceNumber,
+        string $type = self::TYPE_DLV,
+        Customer $customer
     ) {
         $this->referenceNumber = $referenceNumber;
-        $this->type            = $type;
-        $this->customer        = $customer;
+        $this->type = $type;
+        $this->customer = $customer;
     }
 }
