@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap;
+namespace Alhoqbani\SmsaWebService\Soap;
 
 use \WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
@@ -22,18 +22,18 @@ class Service extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named addShipment
      * Meta informations extracted from the WSDL
-     * - documentation: Create Shipment and get SMSA AWB Number
+     * - documentation: Create Shipment and get Smsa AWB Number
      *
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\AddShipment $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\AddShipment $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentResponse|bool
      */
-    public function addShipment(\Alhoqbani\SMSAWebService\Soap\Type\AddShipment $parameters)
+    public function addShipment(\Alhoqbani\SmsaWebService\Soap\Type\AddShipment $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->addShipment($parameters));
@@ -49,18 +49,18 @@ class Service extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named addShip
      * Meta informations extracted from the WSDL
-     * - documentation: Create Shipment with Shipper Details and get SMSA AWB Number
+     * - documentation: Create Shipment with Shipper Details and get Smsa AWB Number
      *
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\AddShip $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\AddShip $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipResponse|bool
      */
-    public function addShip(\Alhoqbani\SMSAWebService\Soap\Type\AddShip $parameters)
+    public function addShip(\Alhoqbani\SmsaWebService\Soap\Type\AddShip $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->addShip($parameters));
@@ -76,18 +76,18 @@ class Service extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named addShipMPS
      * Meta informations extracted from the WSDL
-     * - documentation: Create Shipment with Shipper Details and get SMSA AWB Number for Multi piece Shipments
+     * - documentation: Create Shipment with Shipper Details and get Smsa AWB Number for Multi piece Shipments
      *
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\AddShipMPS $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPSResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipMPSResponse|bool
      */
-    public function addShipMPS(\Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS $parameters)
+    public function addShipMPS(\Alhoqbani\SmsaWebService\Soap\Type\AddShipMPS $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->addShipMPS($parameters));
@@ -110,11 +110,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\StoShipment $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\StoShipment $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\StoShipmentResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\StoShipmentResponse|bool
      */
-    public function stoShipment(\Alhoqbani\SMSAWebService\Soap\Type\StoShipment $parameters)
+    public function stoShipment(\Alhoqbani\SmsaWebService\Soap\Type\StoShipment $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->stoShipment($parameters));
@@ -130,18 +130,18 @@ class Service extends AbstractSoapClientBase
     /**
      * Method to call the operation originally named addShipmentDelv
      * Meta informations extracted from the WSDL
-     * - documentation: Create Shipment with Delivery Details and get SMSA AWB Number
+     * - documentation: Create Shipment with Delivery Details and get Smsa AWB Number
      *
      * @uses AbstractSoapClientBase::getSoapClient()
      * @uses AbstractSoapClientBase::setResult()
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelvResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelvResponse|bool
      */
-    public function addShipmentDelv(\Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv $parameters)
+    public function addShipmentDelv(\Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->addShipmentDelv($parameters));
@@ -164,11 +164,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetTracking $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetTracking $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingResponse|bool
      */
-    public function getTracking(\Alhoqbani\SMSAWebService\Soap\Type\GetTracking $parameters)
+    public function getTracking(\Alhoqbani\SmsaWebService\Soap\Type\GetTracking $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getTracking($parameters));
@@ -191,11 +191,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingwithRef $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRef $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingwithRefResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRefResponse|bool
      */
-    public function getTrackingwithRef(\Alhoqbani\SMSAWebService\Soap\Type\GetTrackingwithRef $parameters)
+    public function getTrackingwithRef(\Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRef $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getTrackingwithRef($parameters));
@@ -218,11 +218,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetStatus $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetStatus $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetStatusResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetStatusResponse|bool
      */
-    public function getStatus(\Alhoqbani\SMSAWebService\Soap\Type\GetStatus $parameters)
+    public function getStatus(\Alhoqbani\SmsaWebService\Soap\Type\GetStatus $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getStatus($parameters));
@@ -243,11 +243,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReady $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReady $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReadyResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReadyResponse|bool
      */
-    public function saphOrderReady(\Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReady $parameters)
+    public function saphOrderReady(\Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReady $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->saphOrderReady($parameters));
@@ -270,11 +270,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetStatusByRef $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetStatusByRef $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetStatusByRefResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetStatusByRefResponse|bool
      */
-    public function getStatusByRef(\Alhoqbani\SMSAWebService\Soap\Type\GetStatusByRef $parameters)
+    public function getStatusByRef(\Alhoqbani\SmsaWebService\Soap\Type\GetStatusByRef $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getStatusByRef($parameters));
@@ -297,11 +297,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRef $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRef $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResponse|bool
      */
-    public function getTrackingByRef(\Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRef $parameters)
+    public function getTrackingByRef(\Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRef $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getTrackingByRef($parameters));
@@ -324,11 +324,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdates $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdates $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResponse|bool
      */
-    public function getShipUpdates(\Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdates $parameters)
+    public function getShipUpdates(\Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdates $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getShipUpdates($parameters));
@@ -351,11 +351,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\CancelShipment $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\CancelShipment $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\CancelShipmentResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\CancelShipmentResponse|bool
      */
-    public function cancelShipment(\Alhoqbani\SMSAWebService\Soap\Type\CancelShipment $parameters)
+    public function cancelShipment(\Alhoqbani\SmsaWebService\Soap\Type\CancelShipment $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->cancelShipment($parameters));
@@ -378,11 +378,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCities $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCities $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResponse|bool
      */
-    public function getRTLCities(\Alhoqbani\SMSAWebService\Soap\Type\GetRTLCities $parameters)
+    public function getRTLCities(\Alhoqbani\SmsaWebService\Soap\Type\GetRTLCities $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getRTLCities($parameters));
@@ -405,11 +405,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetails $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResponse|bool
      */
-    public function getRTLRetails(\Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetails $parameters)
+    public function getRTLRetails(\Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getRTLRetails($parameters));
@@ -432,11 +432,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetails $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetails $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResponse|bool
      */
-    public function getAllRetails(\Alhoqbani\SMSAWebService\Soap\Type\GetAllRetails $parameters)
+    public function getAllRetails(\Alhoqbani\SmsaWebService\Soap\Type\GetAllRetails $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getAllRetails($parameters));
@@ -459,11 +459,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetPDF $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetPDF $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetPDFResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetPDFResponse|bool
      */
-    public function getPDF(\Alhoqbani\SMSAWebService\Soap\Type\GetPDF $parameters)
+    public function getPDF(\Alhoqbani\SmsaWebService\Soap\Type\GetPDF $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getPDF($parameters));
@@ -486,11 +486,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetPDFSino $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetPDFSino $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetPDFSinoResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetPDFSinoResponse|bool
      */
-    public function getPDFSino(\Alhoqbani\SMSAWebService\Soap\Type\GetPDFSino $parameters)
+    public function getPDFSino(\Alhoqbani\SmsaWebService\Soap\Type\GetPDFSino $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getPDFSino($parameters));
@@ -513,11 +513,11 @@ class Service extends AbstractSoapClientBase
      * @uses AbstractSoapClientBase::getResult()
      * @uses AbstractSoapClientBase::saveLastError()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetPDFBr $parameters
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetPDFBr $parameters
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetPDFBrResponse|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetPDFBrResponse|bool
      */
-    public function getPDFBr(\Alhoqbani\SMSAWebService\Soap\Type\GetPDFBr $parameters)
+    public function getPDFBr(\Alhoqbani\SmsaWebService\Soap\Type\GetPDFBr $parameters)
     {
         try {
             $this->setResult(self::getSoapClient()->getPDFBr($parameters));
@@ -535,7 +535,7 @@ class Service extends AbstractSoapClientBase
      *
      * @see AbstractSoapClientBase::getResult()
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelvResponse|\Alhoqbani\SMSAWebService\Soap\Type\AddShipmentResponse|\Alhoqbani\SMSAWebService\Soap\Type\AddShipMPSResponse|\Alhoqbani\SMSAWebService\Soap\Type\AddShipResponse|\Alhoqbani\SMSAWebService\Soap\Type\CancelShipmentResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetPDFBrResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetPDFResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetPDFSinoResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetStatusByRefResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetStatusResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetTrackingResponse|\Alhoqbani\SMSAWebService\Soap\Type\GetTrackingwithRefResponse|\Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReadyResponse|\Alhoqbani\SMSAWebService\Soap\Type\StoShipmentResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelvResponse|\Alhoqbani\SmsaWebService\Soap\Type\AddShipmentResponse|\Alhoqbani\SmsaWebService\Soap\Type\AddShipMPSResponse|\Alhoqbani\SmsaWebService\Soap\Type\AddShipResponse|\Alhoqbani\SmsaWebService\Soap\Type\CancelShipmentResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetPDFBrResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetPDFResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetPDFSinoResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetStatusByRefResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetStatusResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetTrackingResponse|\Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRefResponse|\Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReadyResponse|\Alhoqbani\SmsaWebService\Soap\Type\StoShipmentResponse
      */
     public function getResult()
     {

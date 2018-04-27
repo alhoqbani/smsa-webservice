@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -81,7 +81,7 @@ class CancelShipment extends AbstractStructBase
      *
      * @param string $awbNo
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\CancelShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\CancelShipment
      */
     public function setAwbNo($awbNo = null)
     {
@@ -109,7 +109,7 @@ class CancelShipment extends AbstractStructBase
      *
      * @param string $passkey
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\CancelShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\CancelShipment
      */
     public function setPasskey($passkey = null)
     {
@@ -137,7 +137,7 @@ class CancelShipment extends AbstractStructBase
      *
      * @param string $reas
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\CancelShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\CancelShipment
      */
     public function setReas($reas = null)
     {
@@ -160,7 +160,7 @@ class CancelShipment extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\CancelShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\CancelShipment
      */
     public static function __set_state(array $array)
     {

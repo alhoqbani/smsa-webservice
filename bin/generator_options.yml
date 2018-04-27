@@ -18,7 +18,7 @@ add_comments:
     default: [ ]
     values: null
 namespace_prefix:
-    default: 'Alhoqbani\SMSAWebService\Soap'
+    default: 'Alhoqbani\SmsaWebService\Soap'
     values: ''
 standalone:
     default: false

@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -25,7 +25,7 @@ class GetShipUpdatesResponse extends AbstractStructBase
      * - maxOccurs: 1
      * - minOccurs: 0
      *
-     * @var \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult
+     * @var \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult
      */
     public $getShipUpdatesResult;
 
@@ -34,9 +34,9 @@ class GetShipUpdatesResponse extends AbstractStructBase
      *
      * @uses GetShipUpdatesResponse::setGetShipUpdatesResult()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult
      */
-    public function __construct(\Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult = null)
+    public function __construct(\Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult = null)
     {
         $this
             ->setGetShipUpdatesResult($getShipUpdatesResult);
@@ -45,7 +45,7 @@ class GetShipUpdatesResponse extends AbstractStructBase
     /**
      * Get getShipUpdatesResult value
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult|null
      */
     public function getGetShipUpdatesResult()
     {
@@ -55,11 +55,11 @@ class GetShipUpdatesResponse extends AbstractStructBase
     /**
      * Set getShipUpdatesResult value
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResponse
      */
-    public function setGetShipUpdatesResult(\Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult = null)
+    public function setGetShipUpdatesResult(\Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult $getShipUpdatesResult = null)
     {
         $this->getShipUpdatesResult = $getShipUpdatesResult;
 
@@ -76,7 +76,7 @@ class GetShipUpdatesResponse extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResponse
      */
     public static function __set_state(array $array)
     {

@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -25,7 +25,7 @@ class GetTrackingByRefResponse extends AbstractStructBase
      * - maxOccurs: 1
      * - minOccurs: 0
      *
-     * @var \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResult
+     * @var \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResult
      */
     public $getTrackingByRefResult;
 
@@ -34,9 +34,9 @@ class GetTrackingByRefResponse extends AbstractStructBase
      *
      * @uses GetTrackingByRefResponse::setGetTrackingByRefResult()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult
      */
-    public function __construct(\Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult = null)
+    public function __construct(\Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult = null)
     {
         $this
             ->setGetTrackingByRefResult($getTrackingByRefResult);
@@ -45,7 +45,7 @@ class GetTrackingByRefResponse extends AbstractStructBase
     /**
      * Get getTrackingByRefResult value
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResult|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResult|null
      */
     public function getGetTrackingByRefResult()
     {
@@ -55,11 +55,11 @@ class GetTrackingByRefResponse extends AbstractStructBase
     /**
      * Set getTrackingByRefResult value
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResponse
      */
-    public function setGetTrackingByRefResult(\Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult = null)
+    public function setGetTrackingByRefResult(\Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResult $getTrackingByRefResult = null)
     {
         $this->getTrackingByRefResult = $getTrackingByRefResult;
 
@@ -76,7 +76,7 @@ class GetTrackingByRefResponse extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRefResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRefResponse
      */
     public static function __set_state(array $array)
     {

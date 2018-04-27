@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -357,7 +357,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param int $pCs
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setPCs($pCs = null)
     {
@@ -385,7 +385,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $passKey
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setPassKey($passKey = null)
     {
@@ -413,7 +413,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $refNo
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setRefNo($refNo = null)
     {
@@ -441,7 +441,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $sentDate
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setSentDate($sentDate = null)
     {
@@ -469,7 +469,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $idNo
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setIdNo($idNo = null)
     {
@@ -497,7 +497,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cName
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCName($cName = null)
     {
@@ -525,7 +525,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cntry
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCntry($cntry = null)
     {
@@ -553,7 +553,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cCity
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCCity($cCity = null)
     {
@@ -581,7 +581,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cZip
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCZip($cZip = null)
     {
@@ -609,7 +609,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cPOBox
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCPOBox($cPOBox = null)
     {
@@ -637,7 +637,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cMobile
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCMobile($cMobile = null)
     {
@@ -665,7 +665,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cTel1
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCTel1($cTel1 = null)
     {
@@ -693,7 +693,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cTel2
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCTel2($cTel2 = null)
     {
@@ -721,7 +721,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cAddr1
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCAddr1($cAddr1 = null)
     {
@@ -749,7 +749,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cAddr2
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCAddr2($cAddr2 = null)
     {
@@ -777,7 +777,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $shipType
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setShipType($shipType = null)
     {
@@ -805,7 +805,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $cEmail
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCEmail($cEmail = null)
     {
@@ -833,7 +833,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $carrValue
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCarrValue($carrValue = null)
     {
@@ -861,7 +861,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $carrCurr
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCarrCurr($carrCurr = null)
     {
@@ -889,7 +889,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $codAmt
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCodAmt($codAmt = null)
     {
@@ -917,7 +917,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $weight
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setWeight($weight = null)
     {
@@ -945,7 +945,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $custVal
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCustVal($custVal = null)
     {
@@ -973,7 +973,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $custCurr
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setCustCurr($custCurr = null)
     {
@@ -1001,7 +1001,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $insrAmt
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setInsrAmt($insrAmt = null)
     {
@@ -1029,7 +1029,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $insrCurr
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setInsrCurr($insrCurr = null)
     {
@@ -1057,7 +1057,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param string $itemDesc
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public function setItemDesc($itemDesc = null)
     {
@@ -1080,7 +1080,7 @@ class AddShipment extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipment
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipment
      */
     public static function __set_state(array $array)
     {

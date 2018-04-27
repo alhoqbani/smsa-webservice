@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructArrayBase;
 
@@ -26,7 +26,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      * - minOccurs: 0
      * - nillable: true
      *
-     * @var \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem[]
+     * @var \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem[]
      */
     public $OrderLineItem;
 
@@ -35,7 +35,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      *
      * @uses ArrayOfOrderLineItem::setOrderLineItem()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem[] $orderLineItem
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem[] $orderLineItem
      */
     public function __construct(array $orderLineItem = [])
     {
@@ -49,7 +49,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      * this property may have been unset before, due to the fact that this property is
      * removable from the request (nillable=true+minOccurs=0)
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem[]|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem[]|null
      */
     public function getOrderLineItem()
     {
@@ -61,18 +61,18 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      * This property is removable from request (nillable=true+minOccurs=0), therefore
      * if the value assigned to this property is null, it is removed from this object
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem[] $orderLineItem
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem[] $orderLineItem
      *
      * @throws \InvalidArgumentException
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem
      */
     public function setOrderLineItem(array $orderLineItem = [])
     {
         foreach ($orderLineItem as $arrayOfOrderLineItemOrderLineItemItem) {
             // validation for constraint: itemType
-            if (!$arrayOfOrderLineItemOrderLineItemItem instanceof \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem) {
-                throw new \InvalidArgumentException(sprintf('The OrderLineItem property can only contain items of \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem, "%s" given', is_object($arrayOfOrderLineItemOrderLineItemItem) ? get_class($arrayOfOrderLineItemOrderLineItemItem) : gettype($arrayOfOrderLineItemOrderLineItemItem)), __LINE__);
+            if (!$arrayOfOrderLineItemOrderLineItemItem instanceof \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem) {
+                throw new \InvalidArgumentException(sprintf('The OrderLineItem property can only contain items of \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem, "%s" given', is_object($arrayOfOrderLineItemOrderLineItemItem) ? get_class($arrayOfOrderLineItemOrderLineItemItem) : gettype($arrayOfOrderLineItemOrderLineItemItem)), __LINE__);
             }
         }
         if (is_null($orderLineItem) || (is_array($orderLineItem) && empty($orderLineItem))) {
@@ -87,17 +87,17 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
     /**
      * Add item to OrderLineItem value
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem $item
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem $item
      *
      * @throws \InvalidArgumentException
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem
      */
-    public function addToOrderLineItem(\Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem $item)
+    public function addToOrderLineItem(\Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem $item)
     {
         // validation for constraint: itemType
-        if (!$item instanceof \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem) {
-            throw new \InvalidArgumentException(sprintf('The OrderLineItem property can only contain items of \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
+        if (!$item instanceof \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem) {
+            throw new \InvalidArgumentException(sprintf('The OrderLineItem property can only contain items of \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem, "%s" given', is_object($item) ? get_class($item) : gettype($item)), __LINE__);
         }
         $this->OrderLineItem[] = $item;
 
@@ -109,7 +109,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      *
      * @see AbstractStructArrayBase::current()
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem|null
      */
     public function current()
     {
@@ -123,7 +123,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      *
      * @param int $index
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem|null
      */
     public function item($index)
     {
@@ -135,7 +135,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      *
      * @see AbstractStructArrayBase::first()
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem|null
      */
     public function first()
     {
@@ -147,7 +147,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      *
      * @see AbstractStructArrayBase::last()
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem|null
      */
     public function last()
     {
@@ -161,7 +161,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      *
      * @param int $offset
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem|null
      */
     public function offsetGet($offset)
     {
@@ -190,7 +190,7 @@ class ArrayOfOrderLineItem extends AbstractStructArrayBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem
      */
     public static function __set_state(array $array)
     {

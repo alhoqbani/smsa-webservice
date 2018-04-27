@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -57,7 +57,7 @@ class AddShipmentResponse extends AbstractStructBase
      *
      * @param string $addShipmentResult
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentResponse
      */
     public function setAddShipmentResult($addShipmentResult = null)
     {
@@ -80,7 +80,7 @@ class AddShipmentResponse extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentResponse
      */
     public static function __set_state(array $array)
     {

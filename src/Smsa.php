@@ -1,33 +1,33 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService;
+namespace Alhoqbani\SmsaWebService;
 
-use Alhoqbani\SMSAWebService\Exceptions\FailedResponse;
-use Alhoqbani\SMSAWebService\Exceptions\RequestError;
-use Alhoqbani\SMSAWebService\Soap\ClassMap;
-use Alhoqbani\SMSAWebService\Soap\Service;
-use Alhoqbani\SMSAWebService\Soap\Type\AddShipment;
-use Alhoqbani\SMSAWebService\Soap\Type\CancelShipment;
-use Alhoqbani\SMSAWebService\Soap\Type\GetAllRetails;
-use Alhoqbani\SMSAWebService\Soap\Type\GetPDF;
-use Alhoqbani\SMSAWebService\Soap\Type\GetRTLCities;
-use Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetails;
-use Alhoqbani\SMSAWebService\Soap\Type\GetStatus;
-use Alhoqbani\SMSAWebService\Soap\Type\GetTrackingwithRef;
+use Alhoqbani\SmsaWebService\Exceptions\FailedResponse;
+use Alhoqbani\SmsaWebService\Exceptions\RequestError;
+use Alhoqbani\SmsaWebService\Soap\ClassMap;
+use Alhoqbani\SmsaWebService\Soap\Service;
+use Alhoqbani\SmsaWebService\Soap\Type\AddShipment;
+use Alhoqbani\SmsaWebService\Soap\Type\CancelShipment;
+use Alhoqbani\SmsaWebService\Soap\Type\GetAllRetails;
+use Alhoqbani\SmsaWebService\Soap\Type\GetPDF;
+use Alhoqbani\SmsaWebService\Soap\Type\GetRTLCities;
+use Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails;
+use Alhoqbani\SmsaWebService\Soap\Type\GetStatus;
+use Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRef;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 
-class SMSA
+class Smsa
 {
 
     /**
-     * @var \Alhoqbani\SMSAWebService\Soap\Service
+     * @var \Alhoqbani\SmsaWebService\Soap\Service
      */
     protected $service;
 
@@ -37,7 +37,7 @@ class SMSA
     private $passKey;
 
     /**
-     * Create a new SMSA Instance
+     * Create a new Smsa Instance
      *
      * @param string $passKey
      */
@@ -56,7 +56,7 @@ class SMSA
     /**
      * Fetch all cities that has SMSAExpress locations
      *
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\RequestError
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
      *
      * @return array array of cities with their route code.
      */
@@ -80,7 +80,7 @@ class SMSA
      *
      * @param $cityCode
      *
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\RequestError
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
      *
      * @return array
      */
@@ -98,9 +98,9 @@ class SMSA
     }
 
     /**
-     * Fetch all SMSA Express retails
+     * Fetch all Smsa Express retails
      *
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\RequestError
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
      *
      * @return array list of all retails with details
      */
@@ -122,10 +122,10 @@ class SMSA
      *
      * @param $awb
      *
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\RequestError
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\FailedResponse
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\FailedResponse
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingwithRefResponse|array|bool
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRefResponse|array|bool
      */
     public function track($awb): array
     {
@@ -155,8 +155,8 @@ class SMSA
     /**
      * @param $awb
      *
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\RequestError
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\FailedResponse
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\FailedResponse
      *
      * @return string
      */
@@ -188,13 +188,13 @@ class SMSA
 
     /**
      * Add Shipment without Shipper and delivery details
-     * This method can be used to upload the shipment information to SMSA Server.
+     * This method can be used to upload the shipment information to Smsa Server.
      *
      * @param array $params
      *
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\RequestError
-     * @throws \Alhoqbani\SMSAWebService\FailedResponse
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\FailedResponse
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
+     * @throws \Alhoqbani\SmsaWebService\FailedResponse
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\FailedResponse
      *
      * @return array|string Shipment awb number or array of errors.
      */
@@ -277,9 +277,9 @@ class SMSA
     }
 
     /**
-     * To handle response error from SMSA Soap server
+     * To handle response error from Smsa Soap server
      *
-     * @throws \Alhoqbani\SMSAWebService\Exceptions\RequestError
+     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
      */
     protected function throwRequestError(): void
     {
@@ -290,7 +290,7 @@ class SMSA
             throw new RequestError($soapFault->faultstring);
         }
 
-        throw new RequestError('SMSA request failed with unknown error');
+        throw new RequestError('Smsa request failed with unknown error');
     }
 
     /**

@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Models;
+namespace Alhoqbani\SmsaWebService\Models;
 
 class Shipment
 {
@@ -94,13 +94,13 @@ class Shipment
     /**
      * Customer associated with the shipment.
      *
-     * @var \Alhoqbani\SMSAWebService\Models\Customer
+     * @var \Alhoqbani\SmsaWebService\Models\Customer
      */
     private $customer;
     /**
      * Shipper associated with the shipment.
      *
-     * @var \Alhoqbani\SMSAWebService\Models\Shipper
+     * @var \Alhoqbani\SmsaWebService\Models\Shipper
      */
     private $shipper;
 
@@ -109,7 +109,7 @@ class Shipment
      *
      * @param string                                    $referenceNumber
      * @param string                                    $type
-     * @param \Alhoqbani\SMSAWebService\Models\Customer $customer
+     * @param \Alhoqbani\SmsaWebService\Models\Customer $customer
      */
     public function __construct(
         string $referenceNumber,

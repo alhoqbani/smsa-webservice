@@ -582,7 +582,7 @@
   <wsdl:message name="getPDFBrSoapOut">
     <wsdl:part name="parameters" element="tns:getPDFBrResponse" />
   </wsdl:message>
-  <wsdl:portType name="SMSAWebServiceSoap">
+  <wsdl:portType name="SmsaWebServiceSoap">
     <wsdl:operation name="addShipment">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Create Shipment and get SMSA AWB Number</wsdl:documentation>
       <wsdl:input message="tns:addShipmentSoapIn" />
@@ -678,7 +678,7 @@
       <wsdl:output message="tns:getPDFBrSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="SMSAWebServiceSoap" type="tns:SMSAWebServiceSoap">
+  <wsdl:binding name="SmsaWebServiceSoap" type="tns:SmsaWebServiceSoap">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="addShipment">
       <soap:operation soapAction="http://track.smsaexpress.com/secom/addShipment" style="document" />
@@ -852,7 +852,7 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="SMSAWebServiceSoap12" type="tns:SMSAWebServiceSoap">
+  <wsdl:binding name="SmsaWebServiceSoap12" type="tns:SmsaWebServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="addShipment">
       <soap12:operation soapAction="http://track.smsaexpress.com/secom/addShipment" style="document" />
@@ -1026,12 +1026,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="SMSAWebService">
+  <wsdl:service name="SmsaWebService">
     <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">SMSA eCommerce Web API</wsdl:documentation>
-    <wsdl:port name="SMSAWebServiceSoap" binding="tns:SMSAWebServiceSoap">
+    <wsdl:port name="SmsaWebServiceSoap" binding="tns:SmsaWebServiceSoap">
       <soap:address location="http://track.smsaexpress.com/SECOM/SMSAwebService.asmx" />
     </wsdl:port>
-    <wsdl:port name="SMSAWebServiceSoap12" binding="tns:SMSAWebServiceSoap12">
+    <wsdl:port name="SmsaWebServiceSoap12" binding="tns:SmsaWebServiceSoap12">
       <soap12:address location="http://track.smsaexpress.com/SECOM/SMSAwebService.asmx" />
     </wsdl:port>
   </wsdl:service>

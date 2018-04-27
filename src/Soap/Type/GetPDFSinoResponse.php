@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -57,7 +57,7 @@ class GetPDFSinoResponse extends AbstractStructBase
      *
      * @param string $getPDFSinoResult
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetPDFSinoResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetPDFSinoResponse
      */
     public function setGetPDFSinoResult($getPDFSinoResult = null)
     {
@@ -80,7 +80,7 @@ class GetPDFSinoResponse extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetPDFSinoResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetPDFSinoResponse
      */
     public static function __set_state(array $array)
     {
