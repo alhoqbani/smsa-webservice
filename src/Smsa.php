@@ -39,18 +39,20 @@ class Smsa
     /**
      * Create a new Smsa Instance
      *
-     * @param string $passKey
+     * @param string                 $passKey The pass key to the api provided by Smsa.
+     * @param array|null             $options WSDL option to be passed to SoapClient.
+     * @param AbstractSoapClientBase $service The service which provide SMSA api methods.
      */
-    public function __construct(string $passKey = 'Testing0')
+    public function __construct(string $passKey = 'Testing0', array $options = [], AbstractSoapClientBase $service = null)
     {
         $this->passKey = $passKey;
 
-        $options = [
+        $options = array_merge([
             AbstractSoapClientBase::WSDL_URL      => 'http://track.smsaexpress.com/SECOM/SMSAwebService.asmx?WSDL',
             AbstractSoapClientBase::WSDL_CLASSMAP => ClassMap::get(),
-        ];
+        ], $options);
 
-        $this->service = new Service($options);
+        $this->service = $service ?? new Service($options);
     }
 
     /**
