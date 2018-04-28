@@ -70,21 +70,25 @@ class Smsa
     /**
      * Fetch all cities that has SMSAExpress locations
      *
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
+     * @throws RequestError
      *
-     * @return array array of cities with their route code.
+     * @return SMSAResponse with array of cities with their route code.
      */
-    public function cities(): array
+    public function cities(): SMSAResponse
     {
-        $response = $this->service->getRTLCities(new GetRTLCities($this->passKey));
+        $result = $this->service->getRTLCities(
+            $payload = new GetRTLCities($this->passKey)
+        );
 
-        if (false === $response) {
-            $this->throwRequestError();
-
-            return [];
+        if (false === $result) {
+            return $this->failedRequest('getRTLCities', $payload);
         }
 
-        return $this->parseCityResult($response->getGetRTLCitiesResult()->getAny());
+        return $this->successResponse(
+            'getRTLCities',
+            $payload,
+            $this->parseCityResult($result->getGetRTLCitiesResult()->getAny())
+        );
     }
 
     /**
@@ -94,41 +98,49 @@ class Smsa
      *
      * @param $cityCode
      *
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
+     * @throws RequestError
      *
-     * @return array
+     * @return SMSAResponse with array of retails in given city.
      */
-    public function retailsIn($cityCode): array
+    public function retailsIn($cityCode): SMSAResponse
     {
-        $response = $this->service->getRTLRetails(new GetRTLRetails($cityCode, $this->passKey));
+        $result = $this->service->getRTLRetails(
+            $payload = new GetRTLRetails($cityCode, $this->passKey)
+        );
 
-        if (false === $response) {
-            $this->throwRequestError();
-
-            return [];
+        if (false === $result) {
+            return $this->failedRequest('getRTLCities', $payload);
         }
 
-        return $this->parseRetailsResult($response->getGetRTLRetailsResult()->getAny());
+        return $this->successResponse(
+            'getRTLCities',
+            $payload,
+            $this->parseRetailsResult($result->getGetRTLRetailsResult()->getAny())
+        );
     }
 
     /**
      * Fetch all Smsa Express retails
      *
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
+     * @throws RequestError
      *
-     * @return array list of all retails with details
+     * @return SMSAResponse with list of all retails with details
      */
-    public function retails(): array
+    public function retails(): SMSAResponse
     {
-        $response = $this->service->getAllRetails(new GetAllRetails($this->passKey));
+        $result = $this->service->getAllRetails(
+            $payload = new GetAllRetails($this->passKey)
+        );
 
-        if (false === $response) {
-            $this->throwRequestError();
-
-            return [];
+        if (false === $result) {
+            return $this->failedRequest('getAllRetails', $payload);
         }
 
-        return $this->parseRetailsResult($response->getGetAllRetailsResult()->getAny());
+        return $this->successResponse(
+            'getAllRetails',
+            $payload,
+            $this->parseRetailsResult($result->getGetAllRetailsResult()->getAny())
+        );
     }
 
     /**
@@ -139,65 +151,100 @@ class Smsa
      * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
      * @throws \Alhoqbani\SmsaWebService\Exceptions\FailedResponse
      *
-     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRefResponse|array|bool
+     * @return SMSAResponse
      */
-    public function track($awb): array
+    public function track($awb): SMSAResponse
     {
-        $response = $this->service->getTrackingwithRef(new GetTrackingwithRef($awb, $this->passKey));
+        $result = $this->service->getTrackingwithRef(
+            $payload = new GetTrackingwithRef($awb, $this->passKey)
+        );
 
-        if (false === $response) {
-            $this->throwRequestError();
-
-            return [];
+        if (false === $result) {
+            return $this->failedRequest('GetTrackingwithRef', $payload);
         }
 
-        $result = $response->getGetTrackingwithRefResult();
+        $result = $result->getGetTrackingwithRefResult();
 
         if (is_null($result)) {
-            throw new FailedResponse('The awb provided is not correct.');
+            return $this->failedResponse('GetTrackingwithRef', $payload, 'The awb provided is not correct.');
         }
 
-        $track = $this->parseTrackResult($response->getGetTrackingwithRefResult()->getAny());
+        $track = $this->parseTrackResult($result->getAny());
 
         if (empty($track)) {
-            throw new FailedResponse('No shipment with provided awb.');
+            return $this->failedResponse('GetTrackingwithRef', $payload, 'No shipment with provided awb.');
         }
 
-        return $track;
+        return $this->successResponse(
+            'GetTrackingwithRef',
+            $payload,
+            $track
+        );
     }
 
     /**
      * @param $awb
      *
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\FailedResponse
+     * @throws FailedResponse
+     * @throws RequestError
      *
-     * @return string
+     * @return SMSAResponse
      */
-    public function status($awb): string
+    public function status($awb): SMSAResponse
     {
-        $response = $this->service->getStatus(new GetStatus($awb, $this->passKey));
+        $result = $this->service->getStatus(
+            $payload = new GetStatus($awb, $this->passKey)
+        );
 
-        if (false === $response) {
-            $this->throwRequestError();
+        if (false === $result) {
+            return $this->failedRequest('GetStatus', $payload);
         }
 
-        $status = $response->getGetStatusResult();
+        $status = $result->getGetStatusResult();
 
         if (empty($status) || is_null($status)) {
-            throw new FailedResponse('No status, shipment was not found');
+            return $this->failedResponse('GetStatus', $payload, 'No status, shipment was not found');
         }
 
-        return $status;
+        return $this->successResponse(
+            'GetStatus',
+            $payload,
+            $status
+        );
     }
 
-    public function cancel($awb, $reason)
+    /**
+     * Cancel a shipment by AWB
+     *
+     * @param $awb string
+     * @param $reason string
+     *
+     * @throws FailedResponse
+     * @throws RequestError
+     *
+     * @return SMSAResponse
+     */
+    public function cancel($awb, $reason): SMSAResponse
     {
-        $cancelShipment = new CancelShipment($awb, $this->passKey, $reason);
+        $result = $this->service->cancelShipment(
+            $payload = new CancelShipment($awb, $this->passKey, $reason)
+        );
 
-        $response = $this->service->cancelShipment($cancelShipment);
+        if (false === $result) {
+            return $this->failedRequest('CancelShipment', $payload);
+        }
 
-        return $response;
+        $data = $result->getCancelShipmentResult();
+
+        if (0 === strpos(mb_strtolower($data), 'failed')) {
+            return $this->failedResponse('CancelShipment', $payload, $data);
+        }
+
+        return $this->successResponse(
+            'CancelShipment',
+            $payload,
+            $data
+        );
     }
 
     /**
@@ -228,43 +275,36 @@ class Smsa
             return $this->failedResponse($method, $payload, $data);
         }
 
-        $response = new SMSAResponse(
-            true,
-            $data,
-            null,
-            $method,
-            $payload,
-            $this->service->getLastRequest(true),
-            $this->service->getLastResponse(true)
-        );
-
-        return $response;
+        return $this->successResponse($method, $payload, $data);
     }
 
     /**
      * Get AWB in PDF for printing
      * This method can be used to get the AWB Copy in PDF format for printing and labeling on shipment.
      *
-     * @param $passKey
-     * @param $awb
+     * @param $awb string
      *
-     * @return array|null|string
+     * @throws RequestError
+     *
+     * @return SMSAResponse
      */
-    public function awbPDF($awb, $passKey = null)
+    public function awbPDF(string $awb): SMSAResponse
     {
-        $getPdf = new GetPDF($awb, $passKey ?? $this->passKey);
+        $result = $this->service->getPDF(
+            $payload = new GetPDF($awb, $passKey ?? $this->passKey)
+        );
 
-        $pdf = $this->service->getPDF($getPdf);
-
-        var_dump($pdf);
-
-        if ($pdf) {
-            echo 'pdf is true';
-
-            return $pdf->getGetPDFResult();
+        if (false === $result) {
+            return $this->failedRequest('GetPDF', $payload);
         }
 
-        return $this->service->getLastError();
+        $data = $result->getGetPDFResult();
+
+        return $this->successResponse(
+            'GetPDF',
+            $payload,
+            $data
+        );
     }
 
     /**
@@ -346,6 +386,30 @@ class Smsa
     }
 
     /**
+     * Return a successful response with the data.
+     *
+     * @param $type string The type/function of the SOAP Api used.
+     * @param $payload AbstractStructBase The object that was sent to the SoapClient
+     * @param $data mixed
+     *
+     * @return SMSAResponse
+     */
+    public function successResponse($type, $payload, $data): SMSAResponse
+    {
+        $response = new SMSAResponse(
+            true,
+            $data,
+            null,
+            $type,
+            $payload,
+            $this->service->getLastRequest(true),
+            $this->service->getLastResponse(true)
+        );
+
+        return $response;
+    }
+
+    /**
      * Send a Response with failed request.
      *
      * @param $type string The type/function of the SOAP Api used.
@@ -405,7 +469,7 @@ class Smsa
 
     private function shouldUseExceptions()
     {
-        return $this->shoutUseExceptions;
+        return $this->shouldUseExceptions;
     }
 
     /**

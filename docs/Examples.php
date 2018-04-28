@@ -14,11 +14,10 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 
+$smsa->shouldUseExceptions = false;
+
 //$cities = $smsa->cities();
-//
-//var_dump($cities);
-//
-//die();
+//dump($cities); die();
 
 //$retails = $smsa->retails();
 //dump($retails); die();
@@ -32,7 +31,12 @@ $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 //$track = $smsa->track('290019315810');
 //dump($track); die();
 
-//$cancel = $smsa->cancel('290019315810', 'Test Cancellation');
+//$pdf = $smsa->awbPDF('290019315810');
+//header('Content-type: application/octet-stream');
+//header('Content-disposition: attachment;filename=YOURFILE.pdf');
+//echo $pdf->data; die();
+
+//$cancel = $smsa->cancel('290019319804', 'Test Cancellation');
 //dump($cancel); die();
 
 $customer = new \Alhoqbani\SmsaWebService\Models\Customer(
@@ -73,8 +77,6 @@ $shipper = new Shipper(
 );
 
 $shipment->setShipper($shipper);
-
-$smsa->shouldUseExceptions = false;
 
 $result = $smsa->createShipment($shipment);
 
