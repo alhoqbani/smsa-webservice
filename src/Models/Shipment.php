@@ -225,11 +225,11 @@ class Shipment
             ->setInsrAmt($this->insurance ?? '')
             ->setInsrCurr(!is_null($this->insurance) ? $this->insuranceCurrency ?? $this->defaultCurrency ?? '' : $this->insuranceCurrency ?? '');
 
-        $this->customer->prepareForShipment($shipmentObject);
+        $shipmentObject = $this->customer->prepareForShipment($shipmentObject);
 
         // If the shipment has a shipper, then we have extra parameters to assign to the request.
         if ($this->hasShipper() && method_exists($shipmentObject, 'setPrefDelvDate')) {
-            $this->shipper->prepareForShipment($shipmentObject);
+            $shipmentObject = $this->shipper->prepareForShipment($shipmentObject);
             $shipmentObject->setPrefDelvDate('asd');
             $shipmentObject->setGpsPoints('');
         }
