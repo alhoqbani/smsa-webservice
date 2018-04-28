@@ -14,7 +14,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 
-$smsa->shouldUseExceptions = false;
+//$smsa->shouldUseExceptions = false;
 
 //$cities = $smsa->cities();
 //dump($cities); die();
@@ -38,6 +38,9 @@ $smsa->shouldUseExceptions = false;
 
 //$cancel = $smsa->cancel('290019319804', 'Test Cancellation');
 //dump($cancel); die();
+
+$trackByReference = $smsa->trackByReference('1524923607');
+dump($trackByReference); die();
 
 $customer = new \Alhoqbani\SmsaWebService\Models\Customer(
     'Customer Name',

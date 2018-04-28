@@ -21,6 +21,7 @@ use Alhoqbani\SmsaWebService\Soap\Type\GetPDF;
 use Alhoqbani\SmsaWebService\Soap\Type\GetRTLCities;
 use Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails;
 use Alhoqbani\SmsaWebService\Soap\Type\GetStatus;
+use Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRef;
 use Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRef;
 use WsdlToPhp\PackageBase\AbstractSoapClientBase;
 use WsdlToPhp\PackageBase\AbstractStructBase;
@@ -179,6 +180,41 @@ class Smsa
             'GetTrackingwithRef',
             $payload,
             $track
+        );
+    }
+
+    /**
+     * Get the real-time tracking information of the shipment
+     *
+     * @param string $reference Customer reference number
+     *
+     * @todo This is not working
+     *
+     * @throws FailedResponse
+     * @throws RequestError
+     *
+     * @return SMSAResponse
+     */
+    public function trackByReference(string $reference)
+    {
+        $result = $this->service->getTrackingByRef(
+            $payload = new GetTrackingByRef($reference, $this->passKey)
+        );
+
+        if (false === $result) {
+            return $this->failedRequest('GetTrackingwithRef', $payload);
+        }
+
+        $data = $result->getGetTrackingByRefResult();
+
+        if (is_null($data)) {
+            return $this->failedResponse('GetTrackingwithRef', $payload, 'Shipment was not found');
+        }
+
+        return $this->successResponse(
+            'GetTrackingwithRef',
+            $payload,
+            $data->getAny()
         );
     }
 
