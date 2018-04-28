@@ -7,10 +7,21 @@
  * file that was distributed with this source code.
  */
 
+use Alhoqbani\SmsaWebService\Models\Shipment;
+
 require_once __DIR__.'/../vendor/autoload.php';
 
 $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 
-$pdf = $smsa->awbPDF('290018465508');
+$customer = new \Alhoqbani\SmsaWebService\Models\Customer(
+    'Customer Name',
+    '966500000000',
+    '10 King Fahad Road',
+    'Jeddah'
+);
 
-var_dump($pdf);
+$shipment = new Shipment(time(), Shipment::TYPE_DLV, $customer);
+
+$result = $smsa->createShipment($shipment);
+
+dump($result);
