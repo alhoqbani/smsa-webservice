@@ -9,6 +9,7 @@
 
 namespace Alhoqbani\SmsaWebService\Models;
 
+use Alhoqbani\SmsaWebService\Soap\Type\AddShip;
 use Alhoqbani\SmsaWebService\Soap\Type\AddShipment;
 use WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -195,7 +196,10 @@ class Shipment
 
     public function getTypeObject(string $passKey): AbstractStructBase
     {
-        $addShipment = (new AddShipment())
+        $shipmentObject = $this->createShipmentObject();
+
+        // We set the properties that are available in all Shipments types.
+        $shipmentObject
             // Mandatory fields
             ->setPassKey($passKey)
             ->setRefNo($this->referenceNumber)
@@ -209,7 +213,7 @@ class Shipment
             ->setItemDesc($this->description ?? '')
 
             // Values
-                // Cash on delivery must be >= 0 and must be a string.
+            // Cash on delivery must be >= 0 and must be a string.
             ->setCodAmt((string) $this->cashOnDelivery)
 
             // Set the values and currencies only when they are provided.
@@ -220,17 +224,56 @@ class Shipment
             ->setInsrAmt($this->insurance ?? '')
             ->setInsrCurr(!is_null($this->insurance) ? $this->insuranceCurrency ?? $this->defaultCurrency ?? '' : $this->insuranceCurrency ?? '');
 
-        $this->customer->prepareForShipment($addShipment);
+        $this->customer->prepareForShipment($shipmentObject);
 
-        dump('$addShipment jsonSerialize', $addShipment->jsonSerialize());
+        // If the shipment has a shipper, then we have extra parameters to assign to the request.
+        if ($this->hasShipper() && method_exists($shipmentObject, 'setPrefDelvDate')) {
+            $this->shipper->prepareForShipment($shipmentObject);
+            $shipmentObject->setPrefDelvDate('asd');
+            $shipmentObject->setGpsPoints('');
+        }
 
-        return $addShipment;
+        return $shipmentObject;
     }
 
+    /**
+     * Determines the SOAP type and method used to create the shipment
+     *
+     * @return string
+     */
     public function getServiceMethod(): string
     {
-        return 'addShipment';
+        // If we don't have a shipper, we want to create a shipment without shipper.
+        return $this->hasShipper() ? 'addShip' : 'addShipment';
     }
+
+    /**
+     * Create an instance of the shipment type.
+     *
+     * If we have a shipper, we create an instance of (AddShip), otherwise (AddShipment)
+     *
+     * @return AddShip|AddShipment
+     */
+    private function createShipmentObject()
+    {
+        $class = 'Alhoqbani\\SmsaWebService\\Soap\\Type\\'.$this->getServiceMethod();
+
+        return new $class;
+    }
+
+    /**
+     * Check if we have a shipper to attach to the shipment
+     *
+     * @return bool
+     */
+    private function hasShipper()
+    {
+        return !is_null($this->shipper);
+    }
+
+    /** **************************************************************************************************************
+     *  Setters and Getters
+     * **************************************************************************************************************/
 
     /**
      * @return string

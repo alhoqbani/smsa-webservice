@@ -9,6 +9,10 @@
 
 namespace Alhoqbani\SmsaWebService\Models;
 
+use Alhoqbani\SmsaWebService\Soap\Type\AddShip;
+use Alhoqbani\SmsaWebService\Soap\Type\AddShipment;
+use WsdlToPhp\PackageBase\AbstractStructBase;
+
 class Shipper
 {
 
@@ -97,4 +101,29 @@ class Shipper
         $this->country = $country;
         $this->phone = $phone;
     }
+
+    /**
+     * Add customer details to the shipment object.
+     *
+     * @param AddShipment|AddShip $shipment
+     *
+     * @return AddShipment|AddShip
+     */
+    public function prepareForShipment($shipment): AbstractStructBase
+    {
+        return $shipment
+            // Required fields
+        ->setSName($this->name)
+        ->setSContact($this->contactName)
+        ->setSAddr1($this->addressLine1)
+        ->setSAddr2($this->addressLine2)
+        ->setSCity($this->city)
+        ->setSCntry($this->country)
+        ->setSCity($this->city)
+        ->setSPhone($this->phone);
+    }
+
+    /* **************************************************************************************************************
+     *  Setters and Getters
+     * **************************************************************************************************************/
 }

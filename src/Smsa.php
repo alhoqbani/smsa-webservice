@@ -197,6 +197,18 @@ class Smsa
 
         $result = call_user_func([$this->service, $method], $payload);
 
+        if (false === $result) {
+            $this->throwRequestError();
+
+            return [];
+        }
+
+        $result = $result->{"get{$method}Result"}();
+
+        if (0 === strpos(mb_strtolower($result), 'failed')) {
+            throw new FailedResponse($result);
+        }
+
         return $result;
     }
 
@@ -301,7 +313,7 @@ class Smsa
         $soapFault = array_shift($errors);
 
         if ($soapFault instanceof \SoapFault) {
-            throw new RequestError($soapFault->faultstring);
+            throw new RequestError($soapFault->faultstring, $soapFault->getCode(), $soapFault);
         }
 
         throw new RequestError('Smsa request failed with unknown error');
