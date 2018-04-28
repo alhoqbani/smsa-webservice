@@ -14,7 +14,6 @@ use Alhoqbani\SmsaWebService\Exceptions\RequestError;
 use Alhoqbani\SmsaWebService\Models\Shipment;
 use Alhoqbani\SmsaWebService\Soap\ClassMap;
 use Alhoqbani\SmsaWebService\Soap\Service;
-use Alhoqbani\SmsaWebService\Soap\Type\AddShipment;
 use Alhoqbani\SmsaWebService\Soap\Type\CancelShipment;
 use Alhoqbani\SmsaWebService\Soap\Type\GetAllRetails;
 use Alhoqbani\SmsaWebService\Soap\Type\GetPDF;
@@ -204,70 +203,6 @@ class Smsa
         }
 
         $result = $result->{"get{$method}Result"}();
-
-        if (0 === strpos(mb_strtolower($result), 'failed')) {
-            throw new FailedResponse($result);
-        }
-
-        return $result;
-    }
-
-    /**
-     * Add Shipment without Shipper and delivery details
-     * This method can be used to upload the shipment information to Smsa Server.
-     *
-     * @param array $params
-     *
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
-     * @throws \Alhoqbani\SmsaWebService\FailedResponse
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\FailedResponse
-     *
-     * @return array|string Shipment awb number or array of errors.
-     */
-    public function addShipment(array $params)
-    {
-        $addShipment = (new AddShipment())
-
-            // Mandatory fields
-        ->setPassKey($params['passKey'] ?? $this->passKey ?? 'Testing0')
-        ->setRefNo($params['refNo'] ?? (string) time())
-        ->setPCs($params['pCs'] ?? 0)
-        ->setShipType($params['shipType'] ?? 'DLV')
-        ->setWeight($params['weight'] ?? '0') // Must be intval
-        ->setCName($params['cName'] ?? 'Customer JEDDAH')
-
-            // Customer Details
-        ->setCntry($params['cntry'] ?? 'SA') // Required
-        ->setCCity($params['cCity'] ?? 'JEDDAH') // Required
-        ->setCMobile($params['cMobile'] ?? '0500500500') // Required
-        ->setCAddr1($params['cAddr1'] ?? 'Street Address') // Required
-
-        ->setCZip($params['cZip'] ?? '')
-        ->setCPOBox($params['cPOBox'] ?? '')
-        ->setCTel1($params['cTel1'] ?? '')
-        ->setCTel2($params['cTel2'] ?? '')
-        ->setCAddr2($params['cAddr2'] ?? '')
-        ->setCEmail($params['cEmail'] ?? '')
-
-            // Optional
-        ->setSentDate($params['sentDate'] ?? '')
-        ->setIdNo($params['idNo'] ?? '')
-        ->setCarrValue($params['carrValue'] ?? '')
-        ->setCarrCurr($params['carrCurr'] ?? '')
-        ->setCodAmt($params['codAmt'] ?? '')
-        ->setCustVal($params['custVal'] ?? '')
-        ->setCustCurr($params['custCurr'] ?? '')
-        ->setInsrAmt($params['insrAmt'] ?? '')
-        ->setInsrCurr($params['insrCurr'] ?? '')
-        ->setItemDesc($params['itemDesc'] ?? '');
-
-        $result = $this->service->addShipment($addShipment);
-
-        if (false === $result) {
-            throw new RequestError($this->service->getLastError());
-        }
-
-        $result = $result->getAddShipmentResult();
 
         if (0 === strpos(mb_strtolower($result), 'failed')) {
             throw new FailedResponse($result);

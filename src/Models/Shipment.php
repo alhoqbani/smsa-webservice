@@ -217,6 +217,7 @@ class Shipment
             ->setCodAmt((string) $this->cashOnDelivery)
 
             // Set the values and currencies only when they are provided.
+            // This code is hard to read. Should be refactored !!
             ->setCarrValue($this->value ?? '')
             ->setCarrCurr(!is_null($this->value) ? $this->valueCurrency ?? $this->defaultCurrency ?? '' : $this->valueCurrency ?? '')
             ->setCustVal($this->customs ?? '')
