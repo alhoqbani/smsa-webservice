@@ -14,6 +14,27 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 
+//$cities = $smsa->cities();
+//
+//var_dump($cities);
+//
+//die();
+
+//$retails = $smsa->retails();
+//dump($retails); die();
+
+//$retailsIn = $smsa->retailsIn('TUU');
+//dump($retailsIn); die();
+
+//$status = $smsa->status('290019315792');
+//dump($status); die();
+
+//$track = $smsa->track('290019315810');
+//dump($track); die();
+
+//$cancel = $smsa->cancel('290019315810', 'Test Cancellation');
+//dump($cancel); die();
+
 $customer = new \Alhoqbani\SmsaWebService\Models\Customer(
     'Customer Name',
     '0500000000',
@@ -53,6 +74,8 @@ $shipper = new Shipper(
 
 $shipment->setShipper($shipper);
 
+$smsa->shouldUseExceptions = false;
+
 $result = $smsa->createShipment($shipment);
 
-print_r($result);
+dump('Final $result', $result);
