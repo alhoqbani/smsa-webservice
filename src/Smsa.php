@@ -11,6 +11,7 @@ namespace Alhoqbani\SmsaWebService;
 
 use Alhoqbani\SmsaWebService\Exceptions\FailedResponse;
 use Alhoqbani\SmsaWebService\Exceptions\RequestError;
+use Alhoqbani\SmsaWebService\Models\Shipment;
 use Alhoqbani\SmsaWebService\Soap\ClassMap;
 use Alhoqbani\SmsaWebService\Soap\Service;
 use Alhoqbani\SmsaWebService\Soap\Type\AddShipment;
@@ -186,6 +187,17 @@ class Smsa
         $response = $this->service->cancelShipment($cancelShipment);
 
         return $response;
+    }
+
+    public function createShipment(Shipment $shipment)
+    {
+        $payload = $shipment->getTypeObject($this->passKey);
+
+        $method = $shipment->getServiceMethod();
+
+        $result = call_user_func([$this->service, $method], $payload);
+
+        return $result;
     }
 
     /**

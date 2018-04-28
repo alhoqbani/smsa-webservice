@@ -9,6 +9,8 @@
 
 namespace Alhoqbani\SmsaWebService\Models;
 
+use Alhoqbani\SmsaWebService\Soap\Type\AddShipment;
+
 class Customer
 {
 
@@ -126,5 +128,23 @@ class Customer
         $this->addressLine1 = $addressLine1;
         $this->city = $city;
         $this->country = $country;
+    }
+
+    public function prepareForShipment(AddShipment $shipment): AddShipment
+    {
+        return $shipment
+            ->setCName($this->name)
+            ->setCntry($this->country)// Required
+            ->setCCity($this->city)// Required
+            ->setCMobile($this->mobile)// Required
+            ->setCAddr1($this->addressLine1)// Required
+
+            // Optional fields
+            ->setCZip($params['cZip'] ?? '')
+            ->setCPOBox($params['cPOBox'] ?? '')
+            ->setCTel1($params['cTel1'] ?? '')
+            ->setCTel2($params['cTel2'] ?? '')
+            ->setCAddr2($params['cAddr2'] ?? '')
+            ->setCEmail($params['cEmail'] ?? '');
     }
 }

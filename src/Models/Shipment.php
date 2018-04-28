@@ -9,6 +9,9 @@
 
 namespace Alhoqbani\SmsaWebService\Models;
 
+use Alhoqbani\SmsaWebService\Soap\Type\AddShipment;
+use WsdlToPhp\PackageBase\AbstractStructBase;
+
 class Shipment
 {
     const TYPE_DLV = 'DLV';
@@ -119,5 +122,39 @@ class Shipment
         $this->referenceNumber = $referenceNumber;
         $this->type = $type;
         $this->customer = $customer;
+    }
+
+    public function getTypeObject(string $passKey): AbstractStructBase
+    {
+        $addShipment = (new AddShipment())
+            // Mandatory fields
+            ->setPassKey($passKey)
+            ->setRefNo($this->referenceNumber)
+            ->setPCs($this->itemsCount)
+            ->setShipType($this->type)
+            ->setWeight((string) $this->weight)// Must be string intval
+
+            // Optional
+            ->setSentDate($params['sentDate'] ?? '')
+            ->setIdNo($params['idNo'] ?? '')
+            ->setCarrValue($params['carrValue'] ?? '')
+            ->setCarrCurr($params['carrCurr'] ?? '')
+            ->setCodAmt($params['codAmt'] ?? '')
+            ->setCustVal($params['custVal'] ?? '')
+            ->setCustCurr($params['custCurr'] ?? '')
+            ->setInsrAmt($params['insrAmt'] ?? '')
+            ->setInsrCurr($params['insrCurr'] ?? '')
+            ->setItemDesc($params['itemDesc'] ?? '');
+
+        $this->customer->prepareForShipment($addShipment);
+
+        dump('$addShipment jsonSerialize', $addShipment->jsonSerialize());
+
+        return $addShipment;
+    }
+
+    public function getServiceMethod(): string
+    {
+        return 'addShipment';
     }
 }
