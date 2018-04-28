@@ -60,7 +60,7 @@ class Shipment
      *
      * @var string
      */
-    private $id = '';
+    private $id;
     /**
      * Description of the items present in shipment.
      * Optional
@@ -68,14 +68,83 @@ class Shipment
      *
      * @var string
      */
-    private $description = '';
+    private $description;
     /**
      * Shipment Sent Date.
      * Optional
      *
      * @var string
      */
-    private $sentDate = '';
+    private $sentDate;
+
+    /** Value Properties */
+
+    /**
+     * Value Either 0 or greater than 0 in case of COD.
+     * Required if CASH ON DELIVERY
+     * Correspond to (codAmt)
+     *
+     * @var int
+     */
+    private $cashOnDelivery = 0;
+
+    /**
+     * A default currency for value, insurance and customs .
+     *
+     * This value will be used when either of value, insurance or customs are set without specifying specific currency.
+     *
+     * @var string
+     */
+    private $defaultCurrency;
+    /**
+     * Carriage Value.
+     * Optional
+     * Correspond to (carrValue)
+     *
+     * @var string
+     */
+    private $value;
+    /**
+     * Carriage Currency.
+     * Optional
+     * Correspond to (carrCurr)
+     *
+     * @var string
+     */
+    private $valueCurrency;
+    /**
+     * Customs Value.
+     * Optional
+     * Correspond to (custVal)
+     *
+     * @var string
+     */
+    private $customs;
+    /**
+     * Customs Currency.
+     * Optional
+     * Correspond to (custCurr)
+     *
+     * @var string
+     */
+    private $customsCurrency;
+    /**
+     * Insurance Value.
+     * Optional
+     * Correspond to (insrAmt)
+     *
+     * @var string
+     */
+    private $insurance;
+    /**
+     * Insurance Currency.
+     * Optional
+     * Correspond to (insrCurr)
+     *
+     * @var string
+     */
+    private $insuranceCurrency;
+
     /**
      * Preferred Delivery date in case of future or delayed delivery.
      * Optional
@@ -83,14 +152,14 @@ class Shipment
      *
      * @var string
      */
-    private $deliveryDate = '';
+    private $deliveryDate;
     /**
      * Google GPS points separated by comma for delivery to customer by Google maps
      * Optional
      *
      * @var string
      */
-    private $gpsPoints = '';
+    private $gpsPoints;
 
     /** Related Objects */
 
@@ -111,17 +180,17 @@ class Shipment
      * Shipment constructor.
      *
      * @param string                                    $referenceNumber
-     * @param string                                    $type
      * @param \Alhoqbani\SmsaWebService\Models\Customer $customer
+     * @param string                                    $type
      */
     public function __construct(
         string $referenceNumber,
-        string $type = self::TYPE_DLV,
-        Customer $customer
+        Customer $customer,
+        string $type = self::TYPE_DLV
     ) {
         $this->referenceNumber = $referenceNumber;
-        $this->type = $type;
         $this->customer = $customer;
+        $this->type = $type;
     }
 
     public function getTypeObject(string $passKey): AbstractStructBase
@@ -135,16 +204,21 @@ class Shipment
             ->setWeight((string) $this->weight)// Must be string intval
 
             // Optional
-            ->setSentDate($params['sentDate'] ?? '')
-            ->setIdNo($params['idNo'] ?? '')
-            ->setCarrValue($params['carrValue'] ?? '')
-            ->setCarrCurr($params['carrCurr'] ?? '')
-            ->setCodAmt($params['codAmt'] ?? '')
-            ->setCustVal($params['custVal'] ?? '')
-            ->setCustCurr($params['custCurr'] ?? '')
-            ->setInsrAmt($params['insrAmt'] ?? '')
-            ->setInsrCurr($params['insrCurr'] ?? '')
-            ->setItemDesc($params['itemDesc'] ?? '');
+            ->setSentDate($this->sentDate ?? '')
+            ->setIdNo($this->id ?? '')
+            ->setItemDesc($this->description ?? '')
+
+            // Values
+                // Cash on delivery must be >= 0 and must be a string.
+            ->setCodAmt((string) $this->cashOnDelivery)
+
+            // Set the values and currencies only when they are provided.
+            ->setCarrValue($this->value ?? '')
+            ->setCarrCurr(!is_null($this->value) ? $this->valueCurrency ?? $this->defaultCurrency ?? '' : $this->valueCurrency ?? '')
+            ->setCustVal($this->customs ?? '')
+            ->setCustCurr(!is_null($this->customs) ? $this->customsCurrency ?? $this->defaultCurrency ?? '' : $this->customsCurrency ?? '')
+            ->setInsrAmt($this->insurance ?? '')
+            ->setInsrCurr(!is_null($this->insurance) ? $this->insuranceCurrency ?? $this->defaultCurrency ?? '' : $this->insuranceCurrency ?? '');
 
         $this->customer->prepareForShipment($addShipment);
 
@@ -156,5 +230,385 @@ class Shipment
     public function getServiceMethod(): string
     {
         return 'addShipment';
+    }
+
+    /**
+     * @return string
+     */
+    public function getReferenceNumber(): string
+    {
+        return $this->referenceNumber;
+    }
+
+    /**
+     * @param string $referenceNumber
+     *
+     * @return Shipment
+     */
+    public function setReferenceNumber(string $referenceNumber): self
+    {
+        $this->referenceNumber = $referenceNumber;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return Shipment
+     */
+    public function setType(string $type): self
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getItemsCount(): int
+    {
+        return $this->itemsCount;
+    }
+
+    /**
+     * @param int $itemsCount
+     *
+     * @return Shipment
+     */
+    public function setItemsCount(int $itemsCount): self
+    {
+        $this->itemsCount = $itemsCount;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWeight(): int
+    {
+        return $this->weight;
+    }
+
+    /**
+     * @param int $weight
+     *
+     * @return Shipment
+     */
+    public function setWeight(int $weight): self
+    {
+        $this->weight = $weight;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getId(): string
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $id
+     *
+     * @return Shipment
+     */
+    public function setId(string $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDescription(): string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param string $description
+     *
+     * @return Shipment
+     */
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSentDate(): string
+    {
+        return $this->sentDate;
+    }
+
+    /**
+     * @param string $sentDate
+     *
+     * @return Shipment
+     */
+    public function setSentDate(string $sentDate): self
+    {
+        $this->sentDate = $sentDate;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCashOnDelivery(): int
+    {
+        return $this->cashOnDelivery;
+    }
+
+    /**
+     * @param int $cashOnDelivery
+     *
+     * @return Shipment
+     */
+    public function setCashOnDelivery(int $cashOnDelivery): self
+    {
+        $this->cashOnDelivery = $cashOnDelivery;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDefaultCurrency(): string
+    {
+        return $this->defaultCurrency;
+    }
+
+    /**
+     * @param string $defaultCurrency
+     *
+     * @return Shipment
+     */
+    public function setDefaultCurrency(string $defaultCurrency): self
+    {
+        $this->defaultCurrency = $defaultCurrency;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValue(): string
+    {
+        return $this->value;
+    }
+
+    /**
+     * @param string $value
+     *
+     * @return Shipment
+     */
+    public function setValue(string $value): self
+    {
+        $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getValueCurrency(): string
+    {
+        return $this->valueCurrency;
+    }
+
+    /**
+     * @param string $valueCurrency
+     *
+     * @return Shipment
+     */
+    public function setValueCurrency(string $valueCurrency): self
+    {
+        $this->valueCurrency = $valueCurrency;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustoms(): string
+    {
+        return $this->customs;
+    }
+
+    /**
+     * @param string $customs
+     *
+     * @return Shipment
+     */
+    public function setCustoms(string $customs): self
+    {
+        $this->customs = $customs;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomsCurrency(): string
+    {
+        return $this->customsCurrency;
+    }
+
+    /**
+     * @param string $customsCurrency
+     *
+     * @return Shipment
+     */
+    public function setCustomsCurrency(string $customsCurrency): self
+    {
+        $this->customsCurrency = $customsCurrency;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInsurance(): string
+    {
+        return $this->insurance;
+    }
+
+    /**
+     * @param string $insurance
+     *
+     * @return Shipment
+     */
+    public function setInsurance(string $insurance): self
+    {
+        $this->insurance = $insurance;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getInsuranceCurrency(): string
+    {
+        return $this->insuranceCurrency;
+    }
+
+    /**
+     * @param string $insuranceCurrency
+     *
+     * @return Shipment
+     */
+    public function setInsuranceCurrency(string $insuranceCurrency): self
+    {
+        $this->insuranceCurrency = $insuranceCurrency;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDeliveryDate(): string
+    {
+        return $this->deliveryDate;
+    }
+
+    /**
+     * @param string $deliveryDate
+     *
+     * @return Shipment
+     */
+    public function setDeliveryDate(string $deliveryDate): self
+    {
+        $this->deliveryDate = $deliveryDate;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getGpsPoints(): string
+    {
+        return $this->gpsPoints;
+    }
+
+    /**
+     * @param string $gpsPoints
+     *
+     * @return Shipment
+     */
+    public function setGpsPoints(string $gpsPoints): self
+    {
+        $this->gpsPoints = $gpsPoints;
+
+        return $this;
+    }
+
+    /**
+     * @return Customer
+     */
+    public function getCustomer(): Customer
+    {
+        return $this->customer;
+    }
+
+    /**
+     * @param Customer $customer
+     *
+     * @return Shipment
+     */
+    public function setCustomer(Customer $customer): self
+    {
+        $this->customer = $customer;
+
+        return $this;
+    }
+
+    /**
+     * @return Shipper
+     */
+    public function getShipper(): Shipper
+    {
+        return $this->shipper;
+    }
+
+    /**
+     * @param Shipper $shipper
+     *
+     * @return Shipment
+     */
+    public function setShipper(Shipper $shipper): self
+    {
+        $this->shipper = $shipper;
+
+        return $this;
     }
 }
