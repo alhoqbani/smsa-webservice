@@ -242,6 +242,10 @@ class Smsa
             return $this->failedResponse('GetStatus', $payload, 'No status, shipment was not found');
         }
 
+        if (0 === strpos(mb_strtolower($status), 'failed')) {
+            return $this->failedResponse('CancelShipment', $payload, $status);
+        }
+
         return $this->successResponse(
             'GetStatus',
             $payload,
