@@ -350,7 +350,7 @@ class Smsa
      *
      * @return array Array of cities with its names and route code
      */
-    private function parseCityResult(string $citiesResult): array
+    protected function parseCityResult(string $citiesResult): array
     {
         $xml = simplexml_load_string($citiesResult);
         $cities = [];
@@ -430,7 +430,7 @@ class Smsa
      *
      * @return SMSAResponse
      */
-    public function successResponse($type, $payload, $data): SMSAResponse
+    protected function successResponse($type, $payload, $data): SMSAResponse
     {
         $response = new SMSAResponse(
             true,
@@ -455,7 +455,7 @@ class Smsa
      *
      * @return SMSAResponse
      */
-    private function failedRequest($type, $payload)
+    protected function failedRequest($type, $payload)
     {
         if ($this->shouldUseExceptions()) {
             $this->throwRequestError();
@@ -486,7 +486,7 @@ class Smsa
      *
      * @return SMSAResponse
      */
-    private function failedResponse($type, $payload, $error)
+    protected function failedResponse($type, $payload, $error)
     {
         if ($this->shouldUseExceptions()) {
             throw new FailedResponse($error);
@@ -503,7 +503,7 @@ class Smsa
         );
     }
 
-    private function shouldUseExceptions()
+    protected function shouldUseExceptions()
     {
         return $this->shouldUseExceptions;
     }
