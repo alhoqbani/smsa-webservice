@@ -9,14 +9,37 @@
 
 namespace Alhoqbani\SmsaWebService\Response;
 
-class SMSAResponse
+use WsdlToPhp\PackageBase\AbstractStructBase;
+
+class SMSAResponse implements \JsonSerializable
 {
+    /**
+     * @var bool
+     */
     public $success;
+    /**
+     * @var array|string
+     */
     public $data;
+    /**
+     * @var null|string
+     */
     public $error;
+    /**
+     * @var string
+     */
     public $type;
+    /**
+     * @var AbstractStructBase
+     */
     public $payload;
+    /**
+     * @var \DOMDocument
+     */
     public $request;
+    /**
+     * @var \DOMDocument
+     */
     public $response;
 
     /**
@@ -39,5 +62,27 @@ class SMSAResponse
         $this->request = $request;
         $this->response = $response;
         $this->error = ($error instanceof \SoapFault) ? $error->faultstring : $error;
+    }
+
+    /**
+     * Specify data which should be serialized to JSON
+     **
+     *
+     * @return mixed data which can be serialized by <b>json_encode</b>,
+     *               which is a value of any type other than a resource.
+     *
+     * @since 5.4.0
+     */
+    public function jsonSerialize()
+    {
+        return [
+          'success'    => $this->success,
+          'data'       => $this->data,
+          'error'      => $this->error,
+          'type'       => $this->type,
+          'payload'    => $this->payload->jsonSerialize(),
+          'request'    => $this->request->saveXML(),
+          'response'   => $this->response->saveXML(),
+        ];
     }
 }

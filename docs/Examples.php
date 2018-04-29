@@ -14,22 +14,22 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 
-//$smsa->shouldUseExceptions = false;
-
+$smsa->shouldUseExceptions = false;
+//
 //$cities = $smsa->cities();
-//dump($cities); die();
+//dump($cities->jsonSerialize()); die();
 
 //$retails = $smsa->retails();
 //dump($retails); die();
 
 //$retailsIn = $smsa->retailsIn('TUU');
-//dump($retailsIn); die();
-
+//dump($retailsIn->jsonSerialize()); die();
+//
 //$status = $smsa->status('290019315792');
 //dump($status); die();
 
-//$track = $smsa->track('290019315810');
-//dump($track); die();
+$track = $smsa->track('290019315810');
+dump($track, $track->jsonSerialize()); die();
 
 //$pdf = $smsa->awbPDF('290019315810');
 //header('Content-type: application/octet-stream');
@@ -40,7 +40,7 @@ $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 //dump($cancel); die();
 
 $trackByReference = $smsa->trackByReference('1524923607');
-dump($trackByReference); die();
+dump($trackByReference->jsonSerialize()); die();
 
 $customer = new \Alhoqbani\SmsaWebService\Models\Customer(
     'Customer Name',
