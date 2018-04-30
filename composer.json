@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Alhoqbani\\SMSAWebService\\": "src"
+            "Alhoqbani\\SmsaWebService\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Alhoqbani\\SMSAWebService\\": "tests"
+            "Alhoqbani\\SmsaWebService\\": "tests"
         }
     },
     "scripts": {

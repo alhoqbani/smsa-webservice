@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -57,7 +57,7 @@ class GetShipUpdatesResult extends AbstractStructBase
      * @uses \DOMDocument::hasChildNodes()
      * @uses \DOMDocument::saveXML()
      * @uses \DOMNode::item()
-     * @uses \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult::setSchema()
+     * @uses \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult::setSchema()
      *
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
      *
@@ -82,7 +82,7 @@ class GetShipUpdatesResult extends AbstractStructBase
      *
      * @param \DOMDocument $schema
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult
      */
     public function setSchema(\DOMDocument $schema = null)
     {
@@ -98,7 +98,7 @@ class GetShipUpdatesResult extends AbstractStructBase
      * @uses \DOMDocument::hasChildNodes()
      * @uses \DOMDocument::saveXML()
      * @uses \DOMNode::item()
-     * @uses \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult::setAny()
+     * @uses \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult::setAny()
      *
      * @param bool $asString true: returns XML string, false: returns \DOMDocument
      *
@@ -123,7 +123,7 @@ class GetShipUpdatesResult extends AbstractStructBase
      *
      * @param \DOMDocument $any
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult
      */
     public function setAny(\DOMDocument $any = null)
     {
@@ -142,7 +142,7 @@ class GetShipUpdatesResult extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdatesResult
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdatesResult
      */
     public static function __set_state(array $array)
     {

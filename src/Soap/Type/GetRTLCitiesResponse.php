@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -25,7 +25,7 @@ class GetRTLCitiesResponse extends AbstractStructBase
      * - maxOccurs: 1
      * - minOccurs: 0
      *
-     * @var \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResult
+     * @var \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResult
      */
     public $getRTLCitiesResult;
 
@@ -34,9 +34,9 @@ class GetRTLCitiesResponse extends AbstractStructBase
      *
      * @uses GetRTLCitiesResponse::setGetRTLCitiesResult()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult
      */
-    public function __construct(\Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult = null)
+    public function __construct(\Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult = null)
     {
         $this
             ->setGetRTLCitiesResult($getRTLCitiesResult);
@@ -45,7 +45,7 @@ class GetRTLCitiesResponse extends AbstractStructBase
     /**
      * Get getRTLCitiesResult value
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResult|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResult|null
      */
     public function getGetRTLCitiesResult()
     {
@@ -55,11 +55,11 @@ class GetRTLCitiesResponse extends AbstractStructBase
     /**
      * Set getRTLCitiesResult value
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResponse
      */
-    public function setGetRTLCitiesResult(\Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult = null)
+    public function setGetRTLCitiesResult(\Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResult $getRTLCitiesResult = null)
     {
         $this->getRTLCitiesResult = $getRTLCitiesResult;
 
@@ -76,7 +76,7 @@ class GetRTLCitiesResponse extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCitiesResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCitiesResponse
      */
     public static function __set_state(array $array)
     {

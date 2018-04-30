@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -381,7 +381,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param int $pCs
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setPCs($pCs = null)
     {
@@ -409,7 +409,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $passKey
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setPassKey($passKey = null)
     {
@@ -437,7 +437,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $refNo
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setRefNo($refNo = null)
     {
@@ -465,7 +465,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $sentDate
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setSentDate($sentDate = null)
     {
@@ -493,7 +493,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $idNo
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setIdNo($idNo = null)
     {
@@ -521,7 +521,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cName
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCName($cName = null)
     {
@@ -549,7 +549,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cntry
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCntry($cntry = null)
     {
@@ -577,7 +577,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cCity
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCCity($cCity = null)
     {
@@ -605,7 +605,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cZip
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCZip($cZip = null)
     {
@@ -633,7 +633,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cPOBox
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCPOBox($cPOBox = null)
     {
@@ -661,7 +661,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cMobile
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCMobile($cMobile = null)
     {
@@ -689,7 +689,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cTel1
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCTel1($cTel1 = null)
     {
@@ -717,7 +717,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cTel2
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCTel2($cTel2 = null)
     {
@@ -745,7 +745,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cAddr1
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCAddr1($cAddr1 = null)
     {
@@ -773,7 +773,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cAddr2
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCAddr2($cAddr2 = null)
     {
@@ -801,7 +801,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $shipType
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setShipType($shipType = null)
     {
@@ -829,7 +829,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $cEmail
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCEmail($cEmail = null)
     {
@@ -857,7 +857,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $carrValue
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCarrValue($carrValue = null)
     {
@@ -885,7 +885,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $carrCurr
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCarrCurr($carrCurr = null)
     {
@@ -913,7 +913,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $codAmt
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCodAmt($codAmt = null)
     {
@@ -941,7 +941,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $weight
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setWeight($weight = null)
     {
@@ -969,7 +969,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $custVal
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCustVal($custVal = null)
     {
@@ -997,7 +997,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $custCurr
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setCustCurr($custCurr = null)
     {
@@ -1025,7 +1025,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $insrAmt
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setInsrAmt($insrAmt = null)
     {
@@ -1053,7 +1053,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $insrCurr
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setInsrCurr($insrCurr = null)
     {
@@ -1081,7 +1081,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $itemDesc
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setItemDesc($itemDesc = null)
     {
@@ -1109,7 +1109,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $prefDelvDate
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setPrefDelvDate($prefDelvDate = null)
     {
@@ -1137,7 +1137,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param string $gpsPoints
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public function setGpsPoints($gpsPoints = null)
     {
@@ -1160,7 +1160,7 @@ class AddShipmentDelv extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv
      */
     public static function __set_state(array $array)
     {

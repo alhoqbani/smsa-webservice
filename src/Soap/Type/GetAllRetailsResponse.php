@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -25,7 +25,7 @@ class GetAllRetailsResponse extends AbstractStructBase
      * - maxOccurs: 1
      * - minOccurs: 0
      *
-     * @var \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResult
+     * @var \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResult
      */
     public $getAllRetailsResult;
 
@@ -34,9 +34,9 @@ class GetAllRetailsResponse extends AbstractStructBase
      *
      * @uses GetAllRetailsResponse::setGetAllRetailsResult()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult
      */
-    public function __construct(\Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult = null)
+    public function __construct(\Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult = null)
     {
         $this
             ->setGetAllRetailsResult($getAllRetailsResult);
@@ -45,7 +45,7 @@ class GetAllRetailsResponse extends AbstractStructBase
     /**
      * Get getAllRetailsResult value
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResult|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResult|null
      */
     public function getGetAllRetailsResult()
     {
@@ -55,11 +55,11 @@ class GetAllRetailsResponse extends AbstractStructBase
     /**
      * Set getAllRetailsResult value
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResponse
      */
-    public function setGetAllRetailsResult(\Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult = null)
+    public function setGetAllRetailsResult(\Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResult $getAllRetailsResult = null)
     {
         $this->getAllRetailsResult = $getAllRetailsResult;
 
@@ -76,7 +76,7 @@ class GetAllRetailsResponse extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetailsResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetailsResponse
      */
     public static function __set_state(array $array)
     {

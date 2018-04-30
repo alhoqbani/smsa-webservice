@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -81,7 +81,7 @@ class OrderLineItem extends AbstractStructBase
      *
      * @param string $iSKU
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem
      */
     public function setISKU($iSKU = null)
     {
@@ -109,7 +109,7 @@ class OrderLineItem extends AbstractStructBase
      *
      * @param string $iQty
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem
      */
     public function setIQty($iQty = null)
     {
@@ -137,7 +137,7 @@ class OrderLineItem extends AbstractStructBase
      *
      * @param string $iSerial
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem
      */
     public function setISerial($iSerial = null)
     {
@@ -160,7 +160,7 @@ class OrderLineItem extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\OrderLineItem
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\OrderLineItem
      */
     public static function __set_state(array $array)
     {

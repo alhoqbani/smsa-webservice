@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -69,7 +69,7 @@ class GetRTLRetails extends AbstractStructBase
      *
      * @param string $cityCode
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetails
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails
      */
     public function setCityCode($cityCode = null)
     {
@@ -97,7 +97,7 @@ class GetRTLRetails extends AbstractStructBase
      *
      * @param string $passkey
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetails
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails
      */
     public function setPasskey($passkey = null)
     {
@@ -120,7 +120,7 @@ class GetRTLRetails extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetails
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails
      */
     public static function __set_state(array $array)
     {

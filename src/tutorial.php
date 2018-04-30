@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -12,16 +12,16 @@
  */
 $options = [
     \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_URL      => 'http://track.smsaexpress.com/SECOM/SMSAwebService.asmx?WSDL',
-    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Alhoqbani\SMSAWebService\Soap\ClassMap::get(),
+    \WsdlToPhp\PackageBase\AbstractSoapClientBase::WSDL_CLASSMAP => \Alhoqbani\SmsaWebService\Soap\ClassMap::get(),
 ];
 /**
  * Samples for Service ServiceType
  */
-$service = new \Alhoqbani\SMSAWebService\Soap\Service($options);
+$service = new \Alhoqbani\SmsaWebService\Soap\Service($options);
 /*
  * Sample call for addShipment operation/method
  */
-if (false !== $service->addShipment(new \Alhoqbani\SMSAWebService\Soap\Type\AddShipment())) {
+if (false !== $service->addShipment(new \Alhoqbani\SmsaWebService\Soap\Type\AddShipment())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -29,7 +29,7 @@ if (false !== $service->addShipment(new \Alhoqbani\SMSAWebService\Soap\Type\AddS
 /*
  * Sample call for addShip operation/method
  */
-if (false !== $service->addShip(new \Alhoqbani\SMSAWebService\Soap\Type\AddShip())) {
+if (false !== $service->addShip(new \Alhoqbani\SmsaWebService\Soap\Type\AddShip())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -37,7 +37,7 @@ if (false !== $service->addShip(new \Alhoqbani\SMSAWebService\Soap\Type\AddShip(
 /*
  * Sample call for addShipMPS operation/method
  */
-if (false !== $service->addShipMPS(new \Alhoqbani\SMSAWebService\Soap\Type\AddShipMPS())) {
+if (false !== $service->addShipMPS(new \Alhoqbani\SmsaWebService\Soap\Type\AddShipMPS())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -45,7 +45,7 @@ if (false !== $service->addShipMPS(new \Alhoqbani\SMSAWebService\Soap\Type\AddSh
 /*
  * Sample call for stoShipment operation/method
  */
-if (false !== $service->stoShipment(new \Alhoqbani\SMSAWebService\Soap\Type\StoShipment())) {
+if (false !== $service->stoShipment(new \Alhoqbani\SmsaWebService\Soap\Type\StoShipment())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -53,7 +53,7 @@ if (false !== $service->stoShipment(new \Alhoqbani\SMSAWebService\Soap\Type\StoS
 /*
  * Sample call for addShipmentDelv operation/method
  */
-if (false !== $service->addShipmentDelv(new \Alhoqbani\SMSAWebService\Soap\Type\AddShipmentDelv())) {
+if (false !== $service->addShipmentDelv(new \Alhoqbani\SmsaWebService\Soap\Type\AddShipmentDelv())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -61,7 +61,7 @@ if (false !== $service->addShipmentDelv(new \Alhoqbani\SMSAWebService\Soap\Type\
 /*
  * Sample call for getTracking operation/method
  */
-if (false !== $service->getTracking(new \Alhoqbani\SMSAWebService\Soap\Type\GetTracking())) {
+if (false !== $service->getTracking(new \Alhoqbani\SmsaWebService\Soap\Type\GetTracking())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -69,7 +69,7 @@ if (false !== $service->getTracking(new \Alhoqbani\SMSAWebService\Soap\Type\GetT
 /*
  * Sample call for getTrackingwithRef operation/method
  */
-if (false !== $service->getTrackingwithRef(new \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingwithRef())) {
+if (false !== $service->getTrackingwithRef(new \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingwithRef())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -77,7 +77,7 @@ if (false !== $service->getTrackingwithRef(new \Alhoqbani\SMSAWebService\Soap\Ty
 /*
  * Sample call for getStatus operation/method
  */
-if (false !== $service->getStatus(new \Alhoqbani\SMSAWebService\Soap\Type\GetStatus())) {
+if (false !== $service->getStatus(new \Alhoqbani\SmsaWebService\Soap\Type\GetStatus())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -85,7 +85,7 @@ if (false !== $service->getStatus(new \Alhoqbani\SMSAWebService\Soap\Type\GetSta
 /*
  * Sample call for saphOrderReady operation/method
  */
-if (false !== $service->saphOrderReady(new \Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReady())) {
+if (false !== $service->saphOrderReady(new \Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReady())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -93,7 +93,7 @@ if (false !== $service->saphOrderReady(new \Alhoqbani\SMSAWebService\Soap\Type\S
 /*
  * Sample call for getStatusByRef operation/method
  */
-if (false !== $service->getStatusByRef(new \Alhoqbani\SMSAWebService\Soap\Type\GetStatusByRef())) {
+if (false !== $service->getStatusByRef(new \Alhoqbani\SmsaWebService\Soap\Type\GetStatusByRef())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -101,7 +101,7 @@ if (false !== $service->getStatusByRef(new \Alhoqbani\SMSAWebService\Soap\Type\G
 /*
  * Sample call for getTrackingByRef operation/method
  */
-if (false !== $service->getTrackingByRef(new \Alhoqbani\SMSAWebService\Soap\Type\GetTrackingByRef())) {
+if (false !== $service->getTrackingByRef(new \Alhoqbani\SmsaWebService\Soap\Type\GetTrackingByRef())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -109,7 +109,7 @@ if (false !== $service->getTrackingByRef(new \Alhoqbani\SMSAWebService\Soap\Type
 /*
  * Sample call for getShipUpdates operation/method
  */
-if (false !== $service->getShipUpdates(new \Alhoqbani\SMSAWebService\Soap\Type\GetShipUpdates())) {
+if (false !== $service->getShipUpdates(new \Alhoqbani\SmsaWebService\Soap\Type\GetShipUpdates())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -117,7 +117,7 @@ if (false !== $service->getShipUpdates(new \Alhoqbani\SMSAWebService\Soap\Type\G
 /*
  * Sample call for cancelShipment operation/method
  */
-if (false !== $service->cancelShipment(new \Alhoqbani\SMSAWebService\Soap\Type\CancelShipment())) {
+if (false !== $service->cancelShipment(new \Alhoqbani\SmsaWebService\Soap\Type\CancelShipment())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -125,7 +125,7 @@ if (false !== $service->cancelShipment(new \Alhoqbani\SMSAWebService\Soap\Type\C
 /*
  * Sample call for getRTLCities operation/method
  */
-if (false !== $service->getRTLCities(new \Alhoqbani\SMSAWebService\Soap\Type\GetRTLCities())) {
+if (false !== $service->getRTLCities(new \Alhoqbani\SmsaWebService\Soap\Type\GetRTLCities())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -133,7 +133,7 @@ if (false !== $service->getRTLCities(new \Alhoqbani\SMSAWebService\Soap\Type\Get
 /*
  * Sample call for getRTLRetails operation/method
  */
-if (false !== $service->getRTLRetails(new \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetails())) {
+if (false !== $service->getRTLRetails(new \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetails())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -141,7 +141,7 @@ if (false !== $service->getRTLRetails(new \Alhoqbani\SMSAWebService\Soap\Type\Ge
 /*
  * Sample call for getAllRetails operation/method
  */
-if (false !== $service->getAllRetails(new \Alhoqbani\SMSAWebService\Soap\Type\GetAllRetails())) {
+if (false !== $service->getAllRetails(new \Alhoqbani\SmsaWebService\Soap\Type\GetAllRetails())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -149,7 +149,7 @@ if (false !== $service->getAllRetails(new \Alhoqbani\SMSAWebService\Soap\Type\Ge
 /*
  * Sample call for getPDF operation/method
  */
-if (false !== $service->getPDF(new \Alhoqbani\SMSAWebService\Soap\Type\GetPDF())) {
+if (false !== $service->getPDF(new \Alhoqbani\SmsaWebService\Soap\Type\GetPDF())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -157,7 +157,7 @@ if (false !== $service->getPDF(new \Alhoqbani\SMSAWebService\Soap\Type\GetPDF())
 /*
  * Sample call for getPDFSino operation/method
  */
-if (false !== $service->getPDFSino(new \Alhoqbani\SMSAWebService\Soap\Type\GetPDFSino())) {
+if (false !== $service->getPDFSino(new \Alhoqbani\SmsaWebService\Soap\Type\GetPDFSino())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());
@@ -165,7 +165,7 @@ if (false !== $service->getPDFSino(new \Alhoqbani\SMSAWebService\Soap\Type\GetPD
 /*
  * Sample call for getPDFBr operation/method
  */
-if (false !== $service->getPDFBr(new \Alhoqbani\SMSAWebService\Soap\Type\GetPDFBr())) {
+if (false !== $service->getPDFBr(new \Alhoqbani\SmsaWebService\Soap\Type\GetPDFBr())) {
     print_r($service->getResult());
 } else {
     print_r($service->getLastError());

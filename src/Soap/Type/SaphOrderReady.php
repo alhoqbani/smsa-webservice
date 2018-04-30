@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -43,7 +43,7 @@ class SaphOrderReady extends AbstractStructBase
      * - maxOccurs: 1
      * - minOccurs: 0
      *
-     * @var \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem
+     * @var \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem
      */
     public $orderLineItems;
 
@@ -56,9 +56,9 @@ class SaphOrderReady extends AbstractStructBase
      *
      * @param string                                                   $passKey
      * @param string                                                   $refId
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems
      */
-    public function __construct($passKey = null, $refId = null, \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems = null)
+    public function __construct($passKey = null, $refId = null, \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems = null)
     {
         $this
             ->setPassKey($passKey)
@@ -81,7 +81,7 @@ class SaphOrderReady extends AbstractStructBase
      *
      * @param string $passKey
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReady
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReady
      */
     public function setPassKey($passKey = null)
     {
@@ -109,7 +109,7 @@ class SaphOrderReady extends AbstractStructBase
      *
      * @param string $refId
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReady
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReady
      */
     public function setRefId($refId = null)
     {
@@ -125,7 +125,7 @@ class SaphOrderReady extends AbstractStructBase
     /**
      * Get orderLineItems value
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem|null
      */
     public function getOrderLineItems()
     {
@@ -135,11 +135,11 @@ class SaphOrderReady extends AbstractStructBase
     /**
      * Set orderLineItems value
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReady
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReady
      */
-    public function setOrderLineItems(\Alhoqbani\SMSAWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems = null)
+    public function setOrderLineItems(\Alhoqbani\SmsaWebService\Soap\Type\ArrayOfOrderLineItem $orderLineItems = null)
     {
         $this->orderLineItems = $orderLineItems;
 
@@ -156,7 +156,7 @@ class SaphOrderReady extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\SaphOrderReady
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\SaphOrderReady
      */
     public static function __set_state(array $array)
     {

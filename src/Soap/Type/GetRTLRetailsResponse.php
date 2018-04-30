@@ -1,13 +1,13 @@
 <?php
 
 /*
- * This file is part of SMSA WebService package.
+ * This file is part of Smsa WebService package.
  * (c) Hamoud Alhoqbani <h.alhoqbani@gmail.com>
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace Alhoqbani\SMSAWebService\Soap\Type;
+namespace Alhoqbani\SmsaWebService\Soap\Type;
 
 use \WsdlToPhp\PackageBase\AbstractStructBase;
 
@@ -25,7 +25,7 @@ class GetRTLRetailsResponse extends AbstractStructBase
      * - maxOccurs: 1
      * - minOccurs: 0
      *
-     * @var \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResult
+     * @var \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResult
      */
     public $getRTLRetailsResult;
 
@@ -34,9 +34,9 @@ class GetRTLRetailsResponse extends AbstractStructBase
      *
      * @uses GetRTLRetailsResponse::setGetRTLRetailsResult()
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult
      */
-    public function __construct(\Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult = null)
+    public function __construct(\Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult = null)
     {
         $this
             ->setGetRTLRetailsResult($getRTLRetailsResult);
@@ -45,7 +45,7 @@ class GetRTLRetailsResponse extends AbstractStructBase
     /**
      * Get getRTLRetailsResult value
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResult|null
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResult|null
      */
     public function getGetRTLRetailsResult()
     {
@@ -55,11 +55,11 @@ class GetRTLRetailsResponse extends AbstractStructBase
     /**
      * Set getRTLRetailsResult value
      *
-     * @param \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult
+     * @param \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResponse
      */
-    public function setGetRTLRetailsResult(\Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult = null)
+    public function setGetRTLRetailsResult(\Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResult $getRTLRetailsResult = null)
     {
         $this->getRTLRetailsResult = $getRTLRetailsResult;
 
@@ -76,7 +76,7 @@ class GetRTLRetailsResponse extends AbstractStructBase
      *
      * @param array $array the exported values
      *
-     * @return \Alhoqbani\SMSAWebService\Soap\Type\GetRTLRetailsResponse
+     * @return \Alhoqbani\SmsaWebService\Soap\Type\GetRTLRetailsResponse
      */
     public static function __set_state(array $array)
     {
