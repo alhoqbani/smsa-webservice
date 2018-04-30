@@ -161,6 +161,12 @@ var_dump($retails);
 $retails =  $smsa->retailsIn('TUU');
 ```
 
+
+## Example App
+
+You can check this [repository](https://github.com/alhoqbani/laravel-smsa-webservice-example) for an example app built with Laravel.
+
+
 ## Change log
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
