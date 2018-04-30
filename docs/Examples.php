@@ -14,7 +14,7 @@ require_once __DIR__.'/../vendor/autoload.php';
 
 $smsa = new \Alhoqbani\SmsaWebService\Smsa();
 
-$smsa->shouldUseExceptions = false;
+$smsa->shouldUseExceptions = true;
 //
 //$cities = $smsa->cities();
 //dump($cities->jsonSerialize()); die();
@@ -28,8 +28,8 @@ $smsa->shouldUseExceptions = false;
 //$status = $smsa->status('290019315792');
 //dump($status); die();
 
-$track = $smsa->track('290019315810');
-dump($track, $track->jsonSerialize()); die();
+//$track = $smsa->track('290019315810');
+//dump($track, $track->jsonSerialize()); die();
 
 //$pdf = $smsa->awbPDF('290019315810');
 //header('Content-type: application/octet-stream');
@@ -39,9 +39,10 @@ dump($track, $track->jsonSerialize()); die();
 //$cancel = $smsa->cancel('290019319804', 'Test Cancellation');
 //dump($cancel); die();
 
-$trackByReference = $smsa->trackByReference('1524923607');
-dump($trackByReference->jsonSerialize()); die();
+//$trackByReference = $smsa->trackByReference('1524923607');
+//dump($trackByReference->jsonSerialize()); die();
 
+// Create a shipment
 $customer = new \Alhoqbani\SmsaWebService\Models\Customer(
     'Customer Name',
     '0500000000',
@@ -73,11 +74,12 @@ $shipper = new Shipper(
     'Shipper Name (LLC)',
     'Shipper Employee',
     '1 Main Road',
-    'Shipper Building, Floor 4, Office 9',
     'Riyadh',
     'Saudi Arabia',
     '0110000000'
 );
+
+$shipper->setAddressLine2('Shipper Building, Floor 4, Office 9');
 
 $shipment->setShipper($shipper);
 
