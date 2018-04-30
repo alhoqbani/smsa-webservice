@@ -9,6 +9,14 @@
 
 namespace Alhoqbani\SmsaWebService\Exceptions;
 
+use Alhoqbani\SmsaWebService\Response\SMSAResponse;
+use Throwable;
+
 class RequestError extends SmsaWebServiceException
 {
+    public function __construct(SMSAResponse $smsaResponse, string $message = '', int $code = 0, Throwable $previous = null)
+    {
+        parent::__construct($message, $code, $previous);
+        $this->smsaResponse = $smsaResponse;
+    }
 }

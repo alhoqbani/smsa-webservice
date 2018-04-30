@@ -11,4 +11,8 @@ namespace Alhoqbani\SmsaWebService\Exceptions;
 
 abstract class SmsaWebServiceException extends \Exception
 {
+    /**
+     * @var \Alhoqbani\SmsaWebService\Response\SMSAResponse
+     */
+    public $smsaResponse;
 }

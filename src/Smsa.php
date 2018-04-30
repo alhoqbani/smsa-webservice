@@ -461,14 +461,10 @@ class Smsa
      */
     protected function failedRequest($type, $payload)
     {
-        if ($this->shouldUseExceptions()) {
-            $this->throwRequestError();
-        }
-
         $errors = $this->service->getLastError();
         $error = array_shift($errors);
 
-        return new SMSAResponse(
+        $response = new SMSAResponse(
             false,
             null,
             $error,
@@ -477,6 +473,12 @@ class Smsa
             $this->service->getLastRequest(true),
             $this->service->getLastResponse(true)
         );
+
+        if ($this->shouldUseExceptions()) {
+            $this->throwRequestError($response);
+        }
+
+        return $response;
     }
 
     /**
@@ -492,11 +494,7 @@ class Smsa
      */
     protected function failedResponse($type, $payload, $error)
     {
-        if ($this->shouldUseExceptions()) {
-            throw new FailedResponse($error);
-        }
-
-        return new SMSAResponse(
+        $response = new SMSAResponse(
             false,
             null,
             $error,
@@ -505,6 +503,12 @@ class Smsa
             $this->service->getLastRequest(true),
             $this->service->getLastResponse(true)
         );
+
+        if ($this->shouldUseExceptions()) {
+            throw new FailedResponse($response, $error);
+        }
+
+        return $response;
     }
 
     protected function shouldUseExceptions()
@@ -515,17 +519,19 @@ class Smsa
     /**
      * To handle response error from Smsa Soap server
      *
-     * @throws \Alhoqbani\SmsaWebService\Exceptions\RequestError
+     * @param SMSAResponse $response
+     *
+     * @throws RequestError
      */
-    protected function throwRequestError(): void
+    protected function throwRequestError(SMSAResponse $response): void
     {
         $errors = $this->service->getLastError();
         $soapFault = array_shift($errors);
 
         if ($soapFault instanceof \SoapFault) {
-            throw new RequestError($soapFault->faultstring, $soapFault->getCode(), $soapFault);
+            throw new RequestError($response, $soapFault->faultstring, $soapFault->getCode(), $soapFault);
         }
 
-        throw new RequestError('Smsa request failed with unknown error');
+        throw new RequestError($response, 'Smsa request failed with unknown error');
     }
 }
