@@ -243,7 +243,7 @@ class Smsa
         }
 
         if (0 === strpos(mb_strtolower($status), 'failed')) {
-            return $this->failedResponse('CancelShipment', $payload, $status);
+            return $this->failedResponse('GetStatus', $payload, $status);
         }
 
         return $this->successResponse(
