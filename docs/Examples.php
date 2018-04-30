@@ -81,7 +81,7 @@ $shipper = new Shipper(
 
 $shipper->setAddressLine2('Shipper Building, Floor 4, Office 9');
 
-$shipment->setShipper($shipper);
+//$shipment->setShipper($shipper);
 
 $result = $smsa->createShipment($shipment);
 

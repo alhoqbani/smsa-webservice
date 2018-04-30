@@ -211,11 +211,9 @@ class Shipment
             ->setSentDate($this->sentDate ?? '')
             ->setIdNo($this->id ?? '')
             ->setItemDesc($this->description ?? '')
-
             // Values
             // Cash on delivery must be >= 0 and must be a string.
             ->setCodAmt((string) $this->cashOnDelivery)
-
             // Set the values and currencies only when they are provided.
             // This code is hard to read. Should be refactored !!
             ->setCarrValue($this->value ?? '')
@@ -257,9 +255,12 @@ class Shipment
      */
     private function createShipmentObject()
     {
-        $class = '\\Alhoqbani\\SmsaWebService\\Soap\\Type\\'.$this->getServiceMethod();
-
-        return new $class;
+        switch ($this->getServiceMethod()) {
+            case 'addShip':
+                return new AddShip();
+            case 'addShipment':
+                return new AddShipment();
+        }
     }
 
     /**
