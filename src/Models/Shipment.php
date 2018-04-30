@@ -230,8 +230,8 @@ class Shipment
         // If the shipment has a shipper, then we have extra parameters to assign to the request.
         if ($this->hasShipper() && method_exists($shipmentObject, 'setPrefDelvDate')) {
             $shipmentObject = $this->shipper->prepareForShipment($shipmentObject);
-            $shipmentObject->setPrefDelvDate('asd');
-            $shipmentObject->setGpsPoints('');
+            $shipmentObject->setPrefDelvDate($this->deliveryDate ?? '');
+            $shipmentObject->setGpsPoints($this->gpsPoints ?? '');
         }
 
         return $shipmentObject;
