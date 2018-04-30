@@ -7,29 +7,32 @@
  * file that was distributed with this source code.
  */
 
+use Alhoqbani\SmsaWebService\Models\Customer;
 use Alhoqbani\SmsaWebService\Models\Shipment;
 use Alhoqbani\SmsaWebService\Models\Shipper;
+use Alhoqbani\SmsaWebService\Smsa;
 
 require_once __DIR__.'/../vendor/autoload.php';
 
-$smsa = new \Alhoqbani\SmsaWebService\Smsa();
+$smsa = new Smsa($passKey = 'Testing0');
 
 $smsa->shouldUseExceptions = true;
+
 //
 //$cities = $smsa->cities();
-//dump($cities->jsonSerialize()); die();
+//var_dump($cities->jsonSerialize()); die();
 
-//$retails = $smsa->retails();
-//dump($retails); die();
+$retails = $smsa->retails();
+var_dump($retails); die();
 
 //$retailsIn = $smsa->retailsIn('TUU');
-//dump($retailsIn->jsonSerialize()); die();
+//var_dump($retailsIn->jsonSerialize()); die();
 //
 //$status = $smsa->status('290019315792');
-//dump($status); die();
+//var_dump($status); die();
 
 //$track = $smsa->track('290019315810');
-//dump($track, $track->jsonSerialize()); die();
+//var_dump($track, $track->jsonSerialize()); die();
 
 //$pdf = $smsa->awbPDF('290019315810');
 //header('Content-type: application/octet-stream');
@@ -37,13 +40,13 @@ $smsa->shouldUseExceptions = true;
 //echo $pdf->data; die();
 
 //$cancel = $smsa->cancel('290019319804', 'Test Cancellation');
-//dump($cancel); die();
+//var_dump($cancel); die();
 
 //$trackByReference = $smsa->trackByReference('1524923607');
-//dump($trackByReference->jsonSerialize()); die();
+//var_dump($trackByReference->jsonSerialize()); die();
 
 // Create a shipment
-$customer = new \Alhoqbani\SmsaWebService\Models\Customer(
+$customer = new Customer(
     'Customer Name',
     '0500000000',
     '10 King Fahad Road',
@@ -85,4 +88,4 @@ $shipper->setAddressLine2('Shipper Building, Floor 4, Office 9');
 
 $result = $smsa->createShipment($shipment);
 
-dump('Final $result', $result);
+var_dump($result->jsonSerialize());
