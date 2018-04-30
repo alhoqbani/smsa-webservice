@@ -276,6 +276,10 @@ class Smsa
 
         $data = $result->getCancelShipmentResult();
 
+        if (empty($data) || is_null($data)) {
+            return $this->failedResponse('CancelShipment', $payload, 'Cannot Cancel, shipment was not found');
+        }
+
         if (0 === strpos(mb_strtolower($data), 'failed')) {
             return $this->failedResponse('CancelShipment', $payload, $data);
         }
