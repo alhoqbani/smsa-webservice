@@ -257,7 +257,7 @@ class Shipment
      */
     private function createShipmentObject()
     {
-        $class = 'Alhoqbani\\SmsaWebService\\Soap\\Type\\'.$this->getServiceMethod();
+        $class = '\\Alhoqbani\\SmsaWebService\\Soap\\Type\\'.$this->getServiceMethod();
 
         return new $class;
     }
