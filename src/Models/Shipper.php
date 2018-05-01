@@ -187,7 +187,7 @@ class Shipper
     /**
      * @return string
      */
-    public function getAddressLine2(): string
+    public function getAddressLine2()
     {
         return $this->addressLine2;
     }
