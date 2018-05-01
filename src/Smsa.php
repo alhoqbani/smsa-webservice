@@ -329,6 +329,7 @@ class Smsa
      * @param $awb string
      *
      * @throws RequestError
+     * @throws FailedResponse
      *
      * @return SMSAResponse
      */
@@ -343,6 +344,10 @@ class Smsa
         }
 
         $data = $result->getGetPDFResult();
+
+        if (empty($data) || is_null($data)) {
+            return $this->failedResponse('GetPDF', $payload, 'Cannot print pdf, shipment was not found');
+        }
 
         return $this->successResponse(
             'GetPDF',

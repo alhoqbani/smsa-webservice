@@ -360,7 +360,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->id;
     }
@@ -380,7 +380,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->description;
     }
@@ -400,7 +400,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getSentDate(): string
+    public function getSentDate()
     {
         return $this->sentDate;
     }
@@ -420,7 +420,7 @@ class Shipment
     /**
      * @return int
      */
-    public function getCashOnDelivery(): int
+    public function getCashOnDelivery()
     {
         return $this->cashOnDelivery;
     }
@@ -440,7 +440,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getDefaultCurrency(): string
+    public function getDefaultCurrency()
     {
         return $this->defaultCurrency;
     }
@@ -460,7 +460,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getValue(): string
+    public function getValue()
     {
         return $this->value;
     }
@@ -480,7 +480,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getValueCurrency(): string
+    public function getValueCurrency()
     {
         return $this->valueCurrency;
     }
@@ -500,7 +500,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getCustoms(): string
+    public function getCustoms()
     {
         return $this->customs;
     }
@@ -520,7 +520,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getCustomsCurrency(): string
+    public function getCustomsCurrency()
     {
         return $this->customsCurrency;
     }
@@ -540,7 +540,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getInsurance(): string
+    public function getInsurance()
     {
         return $this->insurance;
     }
@@ -560,7 +560,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getInsuranceCurrency(): string
+    public function getInsuranceCurrency()
     {
         return $this->insuranceCurrency;
     }
@@ -580,7 +580,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getDeliveryDate(): string
+    public function getDeliveryDate()
     {
         return $this->deliveryDate;
     }
@@ -600,7 +600,7 @@ class Shipment
     /**
      * @return string
      */
-    public function getGpsPoints(): string
+    public function getGpsPoints()
     {
         return $this->gpsPoints;
     }
@@ -640,7 +640,7 @@ class Shipment
     /**
      * @return Shipper
      */
-    public function getShipper(): Shipper
+    public function getShipper()
     {
         return $this->shipper;
     }
